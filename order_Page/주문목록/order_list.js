@@ -1,5 +1,6 @@
+const cancelBtn = document.querySelector(".cancel-btn");
+
 function cancelCheck() {
-  const cancelBtn = document.querySelector(".cancel-btn");
   const check = confirm("정말 주문을 취소하시겠습니까?");
   console.log(check);
 
@@ -8,4 +9,4 @@ function cancelCheck() {
   }
 }
 
-cancelBtn.addEventListener("click", cancelCheck());
+cancelBtn.addEventListener("click", cancelCheck);

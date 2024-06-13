@@ -13,9 +13,18 @@ body {
   text-align: center;
 }
 
-.detail_info {
-  background-color: #f9f9f9;
+#orderInfo {
   border: 1px solid #ededed;
+  background-color: #f9f9f9;
+  border-collapse: collapse;
+  width: 40%;
+  margin: auto;
+}
+
+th,
+td {
+  padding: 3px;
+  font-size: 0.8em;
 }
 
 .orderDetail {
