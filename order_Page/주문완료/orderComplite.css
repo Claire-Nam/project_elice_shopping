@@ -1,8 +1,10 @@
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.receipt {
+  text-align: end;
 }
 
 .pay_receipt,
@@ -10,21 +12,43 @@ body {
   background-color: white;
   color: red;
   border: 1px solid red;
+  font-size: 0.8em;
+  text-align: center;
+  width: 80px;
+  height: 30px;
+}
+
+.noti_box,
+.bottom-btn {
   text-align: center;
 }
 
-#orderInfo {
-  border: 1px solid #ededed;
+.orderInfo {
   background-color: #f9f9f9;
+  border: 1px solid #ededed;
   border-collapse: collapse;
-  width: 40%;
   margin: auto;
+  width: 30%;
+  height: 100px;
 }
 
 th,
 td {
   padding: 3px;
   font-size: 0.8em;
+  width: 30px;
+}
+
+td {
+  text-align: left;
+}
+
+.orderDetail,
+.goHome {
+  font-size: 0.8em;
+  text-align: center;
+  width: 90px;
+  height: 45px;
 }
 
 .orderDetail {

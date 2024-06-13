@@ -1,4 +1,4 @@
-const cancelBtn = document.querySelector(".cancel-btn");
+const cancelBtn = document.querySelectorAll(".cancel-btn");
 
 function cancelCheck() {
   const check = confirm("정말 주문을 취소하시겠습니까?");
