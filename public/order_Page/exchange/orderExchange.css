@@ -1,0 +1,36 @@
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+label.exchange {
+  font-weight: bold;
+  width: 80px;
+  float: left;
+}
+
+.exchangeForm {
+  padding-left: 40px;
+}
+
+fieldset {
+  margin: 15px 10px;
+}
+
+fieldset legend {
+  font-weight: bold;
+  font-size: 18px;
+  color: purple;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+#submit {
+  text-align: center;
+}

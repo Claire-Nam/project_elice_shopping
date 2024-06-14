@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>교환 신청</title>
+
+    <link rel="stylesheet" href="orderExchange.css" />
+  </head>
+  <body>
+    <div class="container">
+        <h2>교환 요청서</h2>
+        <form>
+            <fieldset>
+                <legend>주문정보</legend>
+                <ul>
+                    <li>
+                        <label for="orderNum" class="exchange">주문번호</label>
+                        <input type="text" size="40" id="orderNum" required>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label><input type="checkbox" value="product 1">제품번호 1</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" value="product 1">제품번호 2</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" value="product 1">제품번호 3</label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>교환요청</legend>
+                <div>
+                    <form class="exchangeForm">
+                        <label for="reason" class="exchange">교환사유</label>
+                        <textarea cols="40" row="3" id="reason" required></textarea>
+                        <br>
+                        <label for="addFile" class="exchange">이미지첨부<input type="file" id="addFile" required></label>
+                    </form>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>배송지 정보</legend>
+                <ul>
+                    <li>
+                        <label for="name"" class="exchange">성함</label>
+                        <input type="text" size="40" id="name" required>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label for="phoneNum" class="exchange">연락처</label>
+                        <input type="text" size="40" id="phoneNum" required>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label for="address" class="exchange">주소</label>
+                        <textarea cols="40" row="3" id="address" required></textarea>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </div>
+    <div id="submit">
+        <input class="exchangeSubmit" type="submit" value="교환 신청">
+        <input class="exchangeCancel" type="button" value="취소" onclick=""window.location.href="#">
+    </div>
+    <script src="orderExchange.js"></script>
+  </body>
+</html>
