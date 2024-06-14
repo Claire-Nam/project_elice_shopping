@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow" />
     <title>Document</title>
 
-    <link rel="stylesheet" src="orderExchange.css" />
+    <link rel="stylesheet" href="orderExchange.css" />
   </head>
   <body>
     <div class="container">
@@ -16,7 +16,7 @@
                 <legend>주문정보</legend>
                 <ul>
                     <li>
-                        <label for="orderNum">주문번호</label>
+                        <label for="orderNum" class="exchange">주문번호</label>
                         <input type="text" size="40" id="orderNum" required>
                     </li>
                 </ul>
@@ -36,10 +36,10 @@
                 <legend>교환요청</legend>
                 <div>
                     <form>
-                        <label>교환사유</label>
+                        <label for="reason" class="exchange">교환사유</label>
                         <textarea cols="40" row="3" id="reason" required></textarea>
                         <br>
-                        <label>이미지첨부<input type="file" id="addFile" required></label>
+                        <label for="addFile" class="exchange">이미지첨부<input type="file" id="addFile" required></label>
                     </form>
                 </div>
             </fieldset>
@@ -47,19 +47,19 @@
                 <legend>배송지 정보</legend>
                 <ul>
                     <li>
-                        <label for="name"">성함</label>
+                        <label for="name"" class="exchange">성함</label>
                         <input type="text" size="40" id="name" required>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <label for="phoneNum">연락처</label>
+                        <label for="phoneNum" class="exchange">연락처</label>
                         <input type="text" size="40" id="phoneNum" required>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <label for="address">주소</label>
+                        <label for="address" class="exchange">주소</label>
                         <textarea cols="40" row="3" id="address" required></textarea>
                     </li>
                 </ul>
