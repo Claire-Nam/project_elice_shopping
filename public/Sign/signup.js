@@ -62,8 +62,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // 여기서 실제 폼 제출 로직을 추가할 수 있습니다.
       // 예: 서버에 데이터를 전송하거나 페이지를 이동합니다.
+
       alert("회원가입을 완료했습니다. 다시 로그인 해주세요.");
-      window.location.href = "/signin";
+      // const link = "./Sign/signin.html";
+      // console.log(window.location);
+      window.location.href = "../sign/signin.html";
     });
 });
 
