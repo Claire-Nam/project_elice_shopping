@@ -31,6 +31,10 @@ fieldset legend {
   color: purple;
 }
 
+input#address {
+  margin-left: 80px;
+}
+
 ul li {
   margin-bottom: 10px;
 }

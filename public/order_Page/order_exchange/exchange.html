@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow" />
     <title>교환 신청</title>
 
-    <link rel="stylesheet" href="orderExchange.css" />
+    <link rel="stylesheet" href="exchange.css" />
   </head>
   <body>
     <div class="container">
@@ -18,7 +18,12 @@
                 <ul>
                     <li>
                         <label for="orderNum" class="exchange">주문번호</label>
-                        <input type="text" size="40" id="orderNum" required>
+                        <select id="orderNum">
+                            <option value="order-number">20240612-0000001376</option>
+                            <option value="order-number">20240612-0000003954</option>
+                            <option value="order-number">20240612-0000003967</option>
+                            <option value="order-number">20240612-0000003512</option>
+                        </select>
                     </li>
                 </ul>
                 <ul>
@@ -66,7 +71,7 @@
                 <ul>
                     <li>
                         <label for="address" class="exchange">주소</label>
-                        <input type="number" size="7" id="address" required>
+                        <input type="number" size="4" id="postcode" required>
                             <button type="button" class="add_search">주소찾기</button>
                         <input type="text" size="40" id="address">
                         <input type="text" size="40" id="address" value="나머지 주소 입력" required>
@@ -81,6 +86,6 @@
         <input class="exchangeSubmit" type="submit" value="교환 신청">
         <input class="exchangeCancel" type="button" value="취소" onclick=""window.location.href="#">
     </div>
-    <script src="orderExchange.js"></script>
+    <script src="exchange.js"></script>
   </body>
 </html>
