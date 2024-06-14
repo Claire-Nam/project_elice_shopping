@@ -12,6 +12,7 @@
     <div class="container">
         <h2>교환 요청서</h2>
         <form>
+            <!--주문 정보 기재란-->
             <fieldset>
                 <legend>주문정보</legend>
                 <ul>
@@ -32,17 +33,22 @@
                     </li>
                 </ul>
             </fieldset>
+
+            <!--교환 사유 기재란-->
             <fieldset>
                 <legend>교환요청</legend>
-                <div>
-                    <form class="exchangeForm">
+                <div class="exchangeForm">
+                    <form>
                         <label for="reason" class="exchange">교환사유</label>
                         <textarea cols="40" row="3" id="reason" required></textarea>
                         <br>
-                        <label for="addFile" class="exchange">이미지첨부<input type="file" id="addFile" required></label>
+                        <label for="addFile" class="exchange">이미지첨부</label>
+                        <input type="file" id="addFile" required>
                     </form>
                 </div>
             </fieldset>
+
+            <!--교환품 배송지 정보 기재란-->
             <fieldset>
                 <legend>배송지 정보</legend>
                 <ul>
@@ -60,12 +66,17 @@
                 <ul>
                     <li>
                         <label for="address" class="exchange">주소</label>
-                        <textarea cols="40" row="3" id="address" required></textarea>
+                        <input type="number" size="7" id="address" required>
+                            <button type="button" class="add_search">주소찾기</button>
+                        <input type="text" size="40" id="address">
+                        <input type="text" size="40" id="address" value="나머지 주소 입력" required>
                     </li>
                 </ul>
             </fieldset>
         </form>
     </div>
+    
+    <!--제출 관련 버튼-->
     <div id="submit">
         <input class="exchangeSubmit" type="submit" value="교환 신청">
         <input class="exchangeCancel" type="button" value="취소" onclick=""window.location.href="#">

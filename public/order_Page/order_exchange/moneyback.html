@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow">
     <title>반품 및 환불 신청</title>
+
+    <link rel="stylesheet" href="moneyback.css">
   </head>
   <body>
     <div class="container">
@@ -14,8 +17,13 @@
                 <legend>주문정보</legend>
                 <ul>
                     <li>
-                        <label for="orderNum" class="exchange">주문번호</label>
-                        <input type="text" size="40" id="orderNum" required>
+                        <label for="orderNum" class="refund">주문번호</label>
+                        <select id="orderNum">
+                            <option value="order-number">20240612-0000001376</option>
+                            <option value="order-number">20240612-0000003954</option>
+                            <option value="order-number">20240612-0000003967</option>
+                            <option value="order-number">20240612-0000003512</option>
+                        </select>
                     </li>
                 </ul>
                 <ul>
@@ -34,12 +42,13 @@
             <!--반품 사유 기재란-->
             <fieldset>
                 <legend>반품요청</legend>
-                <div>
-                    <form class="exchangeForm">
-                        <label for="reason" class="exchange">반품사유</label>
+                <div class="refundForm">
+                    <form>
+                        <label for="reason" class="refund">반품사유</label>
                         <textarea cols="40" row="3" id="reason" required></textarea>
                         <br>
-                        <label for="addFile" class="exchange">이미지첨부<input type="file" id="addFile" required></label>
+                        <label for="addFile" class="refund">이미지첨부</label>
+                        <input type="file" id="addFile" required>
                     </form>
                 </div>
             </fieldset>
@@ -49,20 +58,25 @@
                 <legend>환불받을 계좌 정보</legend>
                 <ul>
                     <li>
-                        <label for="name"" class="exchange">예금주</label>
-                        <input type="text" size="40" id="name" required>
+                        <label for="name"" class="refund">예금주</label>
+                        <input type="text" size="15" id="name" required>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <label for="phoneNum" class="exchange">연락처</label>
-                        <input type="text" size="40" id="phoneNum" required>
+                        <label for="bank_name" class="refund">은행명</label>
+                        <input type="text" size="15" id="bank_name" required>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <label for="address" class="exchange">주소</label>
-                        <textarea cols="40" row="3" id="address" required></textarea>
+                        <label for="accountNum" class="refund">계좌번호</label>
+                        <input type="number" max="12" size="25" id="accountNum" required>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label for="payback" class="refund">환불금액</label> 
                     </li>
                 </ul>
             </fieldset>
@@ -70,9 +84,9 @@
     </div>
     
     <!--폼 제출 버튼-->
-    <div class="submit">
-        <input type="submit" value="반품 및 환불 신청">
-        <input type="button" value="취소" onclick=""window.location.href="#">
+    <div id="submit">
+        <input class="refundSubmit" type="submit" value="반품 및 환불 신청">
+        <input class="refundCancel" type="button" value="취소" a href="Perfume/index.html">
     </div>
 
   </body>
