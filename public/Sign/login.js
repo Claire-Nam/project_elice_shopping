@@ -1,12 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("loginForm");
-  form.addEventListener("submit", (event) => {
-    const idInput = document.getElementById("formId");
-    const pwInput = document.getElementById("formPw");
+document
+  .getElementById("login-form")
+  .addEventListener("submit", function (event) {
+    var userName = document.querySelector('input[name="userName"]').value;
+    var userPassword = document.querySelector(
+      'input[name="userPassword"]'
+    ).value;
 
-    if (idInput.value === "" || pwInput.value === "") {
-      event.preventDefault();
-      alert("아이디와 비밀번호를 입력해 주세요.");
+    if (!userName || !userPassword) {
+      alert("아이디 또는 비밀번호를 입력해 주세요");
+      event.preventDefault(); // 폼 제출을 막습니다.
     }
   });
-});
