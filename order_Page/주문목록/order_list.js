@@ -9,4 +9,14 @@ function cancelCheck() {
   }
 }
 
-cancelBtn.addEventListener("click", cancelCheck);
+cancelBtn.forEach((el) => {
+  el.addEventListener("click", cancelCheck);
+});
+
+const exchangeBtn = document.querySelectorAll(".exchange");
+
+exchangeBtn.forEach((el) => {
+  el.addEventListener("click", () => {
+    window.location.href = "./order_page/교환/#";
+  });
+});
