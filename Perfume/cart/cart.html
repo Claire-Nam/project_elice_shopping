@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../main.css" />
     <link rel="stylesheet" href="../best/best.css" />
+    <link rel="stylesheet" href="cart.css" />
     <title>Perfume</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap");
       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-</style>
+    </style>
   </head>
   <body>
     <header id="top">
@@ -59,11 +60,77 @@
         <a href="#">전체 선택</a>
         <a href="#">선택 삭제</a>
     </div>
-    <hr width="850px">
-    <div>
-
+    <hr>
+    <div class="cartPerfume">
+      <div class="cartItem">
+        <input type="checkbox" class="checkbox">
+        <img src="../image/perfume4.jpg" class="perfumeImg">
+        <div class="cartList">
+          <p class="cartInfo brandName">에르메스</p>
+          <p class="cartInfo perfumeName">멍뜨 프레슈 오 드 퍼퓸</p>
+          <p class="cartInfo price">122,120원</p>
+        </div>
+        <div class="count"> 
+          <button class="minus">-</button>
+          <p>1</p>
+          <button class="plus">+</button>
+        </div>
+        <div class="cartPrice">
+          <p>171,000원</p>
+        </div>
+      </div>
+      <div class="cartItem">
+        <input type="checkbox" class="checkbox">
+        <img src="../image/perfume3.jpg" class="perfumeImg">
+        <div class="cartList">
+          <p class="cartInfo brandName">에르메스</p>
+          <p class="cartInfo perfumeName">멍뜨 프레슈 오 드 퍼퓸</p>
+          <p class="cartInfo price">122,120원</p>
+        </div>
+        <div class="count"> 
+          <button class="minus">-</button>
+          <p>1</p>
+          <button class="plus">+</button>
+        </div>
+        <div class="cartPrice">
+          <p>171,000원</p>
+        </div>
+      </div>
+      <div class="cartItem">
+        <input type="checkbox" class="checkbox">
+        <img src="../image/perfume2.jpg" class="perfumeImg">
+        <div class="cartList">
+          <p class="cartInfo brandName">에르메스</p>
+          <p class="cartInfo perfumeName">멍뜨 프레슈 오 드 퍼퓸</p>
+          <p class="cartInfo price">122,120원</p>
+        </div>
+        <div class="count"> 
+          <button class="minus">-</button>
+          <p>1</p>
+          <button class="plus">+</button>
+        </div>
+        <div class="cartPrice">
+          <p>171,000원</p>
+        </div>
+      </div>
     </div>
-
+    <div>
+      <div class="payment">
+        <div class="payment-titles">
+            <p>총 상품 금액</p>
+            <p>총 할인 금액</p>
+            <p>총 결제 금액</p>
+        </div>
+        <div class="payment-values">
+            <p>244,240원</p>
+            <div class="operator">-</div>
+            <p>44,240원</p>
+            <div class="operator">=</div>
+            <p>200,000원</p>
+        </div>
+        <button id="paymentBtn">결제하기</button>
+      </div>
+    </div>
     <!--<script src="js/product.js"></script>-->
   </body>
 </html>
