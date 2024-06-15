@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow">
+    <title>반품 및 환불 신청</title>
+
+    <link rel="stylesheet" href="refund.css">
+</head>
+<body>
+    <div class="container">
+        <h2>반품 및 환불 요청서</h2>
+        <form>
+            <!--주문 정보 기재란-->
+            <fieldset>
+                <legend>주문정보</legend>
+                <ul>
+                    <li>
+                        <label for="orderNum" class="refund">주문번호</label>
+                        <select id="orderNum">
+                            <option value="order-number">20240612-0000001376</option>
+                            <option value="order-number">20240612-0000003954</option>
+                            <option value="order-number">20240612-0000003967</option>
+                            <option value="order-number">20240612-0000003512</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label><input type="checkbox" value="product 1">제품번호 1</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" value="product 1">제품번호 2</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" value="product 1">제품번호 3</label>
+                    </li>
+                </ul>
+            </fieldset>
+
+            <!--반품 사유 기재란-->
+            <fieldset>
+                <legend>반품요청</legend>
+                <div class="refundForm">
+                    <form>
+                        <label for="reason" class="refund">반품사유</label>
+                        <textarea cols="40" row="3" id="reason" required></textarea>
+                        <br>
+                        <label for="addFile" class="refund">이미지첨부</label>
+                        <input type="file" id="addFile" required>
+                    </form>
+                </div>
+            </fieldset>
+
+            <!--환불 정보 기재란-->
+            <fieldset>
+                <legend>환불받을 계좌 정보</legend>
+                <ul>
+                    <li>
+                        <label for="name"" class="refund">예금주</label>
+                        <input type="text" size="15" id="name" required>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label for="bank_name" class="refund">은행명</label>
+                        <input type="text" size="15" id="bank_name" required>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label for="accountNum" class="refund">계좌번호</label>
+                        <input type="number" max="12" size="25" id="accountNum" required>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label for="payback" class="refund">환불금액</label> 
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </div>
+    
+    <!--폼 제출 버튼-->
+    <div id="submit">
+        <input class="refundSubmit" type="submit" value="반품 및 환불 신청">
+        <input class="refundCancel" type="button" value="취소" a href="Perfume/index.html">
+    </div>
+
+    <script src="refund.js"></script>
+  </body>
+</html>
