@@ -14,7 +14,7 @@
         <form>
             <!--주문 정보 기재란-->
             <fieldset>
-                <legend>주문정보</legend>
+                <legend>교환요청상품</legend>
                 <ul>
                     <li>
                         <label for="orderNum" class="exchange">주문번호</label>
@@ -72,9 +72,9 @@
                     <li>
                         <label for="address" class="exchange">주소</label>
                         <input type="number" size="4" id="postcode" required>
-                            <button type="button" class="add_search">주소찾기</button>
-                        <input type="text" size="40" id="address">
-                        <input type="text" size="40" id="address" value="나머지 주소 입력" required>
+                            <button type="button" class="searchPostCode">우편번호 찾기</button>
+                        <input type="text" size="40" id="roadAddress">
+                        <input type="text" size="40" id="roadAdressDetail" placehorder="상세주소 입력" required>
                     </li>
                 </ul>
             </fieldset>

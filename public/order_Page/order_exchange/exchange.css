@@ -31,8 +31,13 @@ fieldset legend {
   color: purple;
 }
 
-input#address {
+#roadAddress,
+#roadAdressDetail {
   margin-left: 80px;
+}
+
+#roadAdressDetail:placeholder {
+  color: #d4d4d4;
 }
 
 ul li {
