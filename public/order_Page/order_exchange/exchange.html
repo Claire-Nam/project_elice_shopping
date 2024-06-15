@@ -3,19 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>반품 및 환불 신청</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <title>교환 신청</title>
+
+    <link rel="stylesheet" href="exchange.css" />
   </head>
   <body>
     <div class="container">
-        <h2>반품 및 환불 요청서</h2>
+        <h2>교환 요청서</h2>
         <form>
             <!--주문 정보 기재란-->
             <fieldset>
-                <legend>주문정보</legend>
+                <legend>교환요청상품</legend>
                 <ul>
                     <li>
                         <label for="orderNum" class="exchange">주문번호</label>
-                        <input type="text" size="40" id="orderNum" required>
+                        <select id="orderNum">
+                            <option value="order-number">20240612-0000001376</option>
+                            <option value="order-number">20240612-0000003954</option>
+                            <option value="order-number">20240612-0000003967</option>
+                            <option value="order-number">20240612-0000003512</option>
+                        </select>
                     </li>
                 </ul>
                 <ul>
@@ -31,25 +39,26 @@
                 </ul>
             </fieldset>
 
-            <!--반품 사유 기재란-->
+            <!--교환 사유 기재란-->
             <fieldset>
-                <legend>반품요청</legend>
-                <div>
-                    <form class="exchangeForm">
-                        <label for="reason" class="exchange">반품사유</label>
+                <legend>교환요청</legend>
+                <div class="exchangeForm">
+                    <form>
+                        <label for="reason" class="exchange">교환사유</label>
                         <textarea cols="40" row="3" id="reason" required></textarea>
                         <br>
-                        <label for="addFile" class="exchange">이미지첨부<input type="file" id="addFile" required></label>
+                        <label for="addFile" class="exchange">이미지첨부</label>
+                        <input type="file" id="addFile" required>
                     </form>
                 </div>
             </fieldset>
 
-            <!--환불 정보 기재란-->
+            <!--교환품 배송지 정보 기재란-->
             <fieldset>
-                <legend>환불받을 계좌 정보</legend>
+                <legend>배송지 정보</legend>
                 <ul>
                     <li>
-                        <label for="name"" class="exchange">예금주</label>
+                        <label for="name"" class="exchange">성함</label>
                         <input type="text" size="40" id="name" required>
                     </li>
                 </ul>
@@ -62,18 +71,21 @@
                 <ul>
                     <li>
                         <label for="address" class="exchange">주소</label>
-                        <textarea cols="40" row="3" id="address" required></textarea>
+                        <input type="number" size="4" id="postcode" required>
+                            <button type="button" class="searchPostCode">우편번호 찾기</button>
+                        <input type="text" size="40" id="roadAddress">
+                        <input type="text" size="40" id="roadAdressDetail" placehorder="상세주소 입력" required>
                     </li>
                 </ul>
             </fieldset>
         </form>
     </div>
     
-    <!--폼 제출 버튼-->
-    <div class="submit">
-        <input type="submit" value="반품 및 환불 신청">
-        <input type="button" value="취소" onclick=""window.location.href="#">
+    <!--제출 관련 버튼-->
+    <div id="submit">
+        <input class="exchangeSubmit" type="submit" value="교환 신청">
+        <input class="exchangeCancel" type="button" value="취소" onclick=""window.location.href="#">
     </div>
-
+    <script src="exchange.js"></script>
   </body>
 </html>

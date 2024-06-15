@@ -3,18 +3,22 @@
   margin: 0 auto;
 }
 
+h2 {
+  text-align: center;
+}
+
 ul {
   list-style-type: none;
 }
 
-label.exchange {
+label.refund {
   font-weight: bold;
   width: 80px;
   float: left;
 }
 
-.exchangeForm {
-  padding-left: 40px;
+.refundForm {
+  padding: 0 40px;
 }
 
 fieldset {
