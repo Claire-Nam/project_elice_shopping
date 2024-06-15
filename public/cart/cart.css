@@ -1,0 +1,147 @@
+.sortCart {
+  display: flex;
+  margin-left: 120px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.sortCart a {
+  margin-right: 20px;
+}
+
+.sortCart a:hover {
+  color: gray;
+}
+
+hr {
+  margin: 0px auto;
+  width: 1300px;
+}
+
+.checkbox {
+  margin-left: 140px;
+  margin-top: -10px;
+}
+
+.perfumeImg {
+  width: 80px;
+  height: 80px;
+  margin-left: 40px;
+  margin-right: 100px;
+  margin-bottom: 20px;
+}
+
+.cartPerfume {
+  display: flex;
+  flex-direction: column; /* 각 아이템이 세로로 정렬되도록 설정 */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.perfumeName {
+  width: 160px;
+  margin-left: 40px;
+}
+
+.price {
+  margin-left: 50px;
+}
+
+.cartList {
+  display: flex;
+  align-items: center;
+}
+.cartItem {
+  display: flex;
+  align-items: center; /* 이미지와 텍스트가 수직으로 가운데 정렬되도록 설정 */
+  gap: 20px; /* 이미지와 텍스트 사이의 간격 설정 */
+}
+
+.cartInfo {
+  margin-right: 20px;
+}
+
+.count {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+}
+
+.minus,
+.plus {
+  font-size: 20px;
+  height: 25px;
+  width: 40px;
+  border: 0;
+  background-color: transparent;
+  border-radius: 4px;
+  font-weight: bold;
+  border: 1px solid gray;
+  color: gray;
+}
+
+.plus:hover {
+  color: purple;
+  border-color: purple;
+}
+.minus:hover {
+  color: purple;
+  border-color: purple;
+}
+.count p {
+  border: 1px solid black;
+  width: 80px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.cartPrice {
+  margin-left: 140px;
+}
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1100px;
+  margin: 80px 130px 30px 130px;
+  border: 1px solid gray;
+  padding: 30px 80px;
+}
+
+.payment-titles,
+.payment-values {
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  margin-left: -180px;
+}
+
+.payment-titles p,
+.payment-values p {
+  margin: 5px 0;
+  width: 60.3%;
+  text-align: center;
+}
+
+.operator {
+  font-size: 25px;
+  margin-top: -10px;
+}
+
+#paymentBtn {
+  border: 0;
+  background-color: transparent;
+  font-size: 15px;
+  width: 150px;
+  height: 50px;
+  background-color: rgb(234, 211, 255);
+  align-self: flex-end;
+  margin-top: -60px;
+  margin-right: -40px;
+}
+#paymentBtn:hover {
+  color: blueviolet;
+  background-color: rgb(213, 204, 223);
+}
