@@ -12,11 +12,3 @@ function onCancelButtonClick() {
 cancelBtn.forEach((el) => {
   el.addEventListener("click", onCancelButtonClick);
 });
-
-const exchangeBtn = document.querySelectorAll(".exchange");
-
-exchangeBtn.forEach((el) => {
-  el.addEventListener("click", () => {
-    window.location.href = "./order_page/교환/#";
-  });
-});
