@@ -1,6 +1,6 @@
 const cancelBtn = document.querySelectorAll(".cancel-btn");
 
-function cancelCheck() {
+function onCancelButtonClick() {
   const check = confirm("정말 주문을 취소하시겠습니까?");
   console.log(check);
 
@@ -10,7 +10,7 @@ function cancelCheck() {
 }
 
 cancelBtn.forEach((el) => {
-  el.addEventListener("click", cancelCheck);
+  el.addEventListener("click", onCancelButtonClick);
 });
 
 const exchangeBtn = document.querySelectorAll(".exchange");
