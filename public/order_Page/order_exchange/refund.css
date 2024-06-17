@@ -1,0 +1,40 @@
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+label.refund {
+  font-weight: bold;
+  width: 80px;
+  float: left;
+}
+
+.refundForm {
+  padding: 0 40px;
+}
+
+fieldset {
+  margin: 15px 10px;
+}
+
+fieldset legend {
+  font-weight: bold;
+  font-size: 18px;
+  color: purple;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+#submit {
+  text-align: center;
+}
