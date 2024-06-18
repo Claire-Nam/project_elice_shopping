@@ -1,8 +1,8 @@
 document
   .getElementById("login-form")
   .addEventListener("submit", function (event) {
-    var userName = document.querySelector('input[name="userName"]').value;
-    var userPassword = document.querySelector(
+    const userName = document.querySelector('input[name="userName"]').value;
+    const userPassword = document.querySelector(
       'input[name="userPassword"]'
     ).value;
 

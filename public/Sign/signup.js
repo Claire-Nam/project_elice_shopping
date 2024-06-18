@@ -4,16 +4,18 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("submit", function (event) {
       event.preventDefault(); // 폼 제출을 막습니다.
 
-      var userName = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-      var confirmPassword = document.getElementById("confirmPassword").value;
-      var name = document.getElementById("name").value;
-      var postcode = document.getElementById("sample6_postcode").value;
-      var address = document.getElementById("sample6_address").value;
-      var detailAddress = document.getElementById(
+      const userName = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      const name = document.getElementById("name").value;
+      const postcode = document.getElementById("sample6_postcode").value;
+      const address = document.getElementById("sample6_address").value;
+      const detailAddress = document.getElementById(
         "sample6_detailAddress"
       ).value;
-      var extraAddress = document.getElementById("sample6_extraAddress").value;
+      const extraAddress = document.getElementById(
+        "sample6_extraAddress"
+      ).value;
 
       // 아이디 확인 (이메일 형식으로 변경)
       if (!userName) {
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      var usernamePattern = /^[a-z0-9]{4,16}$/;
+      const usernamePattern = /^[a-z0-9]{4,16}$/;
       if (!usernamePattern.test(userName)) {
         alert("아이디는 영문소문자/숫자, 4~16자로 입력해 주세요.");
         return;
@@ -45,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // 주소 객체 생성
-      var addressObj = {
+      const addressObj = {
         postcode: postcode,
         address: address,
         detailAddress: detailAddress,
@@ -78,8 +80,8 @@ function sample6_execDaumPostcode() {
 
       // 각 주소의 노출 규칙에 따라 주소를 조합한다.
       // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-      var addr = ""; // 주소 변수
-      var extraAddr = ""; // 참고항목 변수
+      let addr = ""; // 주소 변수
+      let extraAddr = ""; // 참고항목 변수
 
       //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
       if (data.userSelectedType === "R") {
