@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="order_detail.css" />
   </head>
   <body>
-    <main role="main" class="main-container">
+    <main class="main-container">
       <table border="1" class="table" style="text-align: center">
         <h2>주문상세</h2>
         <tr>
@@ -58,15 +58,24 @@
         <div>
           <h3>받는사람 정보</h3>
           <hr />
-          <div>
-            <table>
-              <dl>
-                <dt>받는사람</dt>
-                <dt>연락처</dt>
-                <dt>받는주소</dt>
-                <dt>배송 요청 사항</dt>
-              </dl>
-              <hr />
+          <div id="delivery">
+            <table class="deliver_info">
+              <tr>
+                <th>받는 사람</th>
+                <td>엘리스</td>
+              </tr>
+              <tr>
+                <th>연 락 처</th>
+                <td>010-1234-5678</td>
+              </tr>
+              <tr>
+                <th>받는 주소</th>
+                <td>서울시 강남구 선릉로 433</td>
+              </tr>
+              <tr>
+                <th>요청 사항</th>
+                <td>-</td>
+              </tr>
             </table>
           </div>
         </div>
@@ -76,18 +85,34 @@
       <div class="payment">
         <div>
           <h3>결제 정보</h3>
-          <hr />
           <div>
-            <table>
-              <tr>
-                <th>결제수단</th>
-              </tr>
-              <tr>
-                <th>총 상품가격</th>
-                <th>배송비</th>
-                <th>카드명/할부</th>
-                <th>총 결제금액</th>
-              </tr>
+            <table class="pay_info">
+              <thead>
+                <tr>
+                  <th>결제 수단</th>
+                  <th>총 상품가격</th>
+                  <th>배송비</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>신용카드</td>
+                  <td>₩317,000</td>
+                  <td>무료 배송</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>카드명/할부</th>
+                  <th>총 결제금액</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>BC카드/3개월</td>
+                  <td>₩317,000</td>
+                </tr>
+              </tbody>
               <hr />
             </table>
           </div>
