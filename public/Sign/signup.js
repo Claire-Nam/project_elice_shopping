@@ -1,7 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("login-form")
-    .addEventListener("submit", function (event) {
+    .addEventListener("submit", async (event) => {
       event.preventDefault(); // 폼 제출을 막습니다.
 
       const userName = document.getElementById("username").value;
@@ -53,14 +53,35 @@ document.addEventListener("DOMContentLoaded", function () {
         detailAddress: detailAddress,
         extraAddress: extraAddress,
       };
+      /**
+       * 회원가입	POST
+       * 34.22.80.21/api/register
+       * fullName, email, password, phoneNumber, address 입력	role= user(일반사용자), admin(관리자)
+       */
 
-      // 회원가입 처리 로직을 여기에 추가합니다.
-      console.log({
-        userName: userName,
-        password: password,
-        name: name,
-        address: addressObj,
-      });
+      const result = await fetch("http://34.22.80.21/api/users/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: `${userName}@naver.com`,
+          password: password,
+          fullName: name,
+          address: addressObj.address,
+          phoneNumber: "01045103013",
+        }),
+      }).then((x) => x.json());
+
+      console.log(result);
+
+      // // 회원가입 처리 로직을 여기에 추가합니다.
+      // console.log({
+      //   userName: userName,
+      //   password: password,
+      //   name: name,
+      //   address: addressObj,
+      // });
 
       // 여기서 실제 폼 제출 로직을 추가할 수 있습니다.
       // 예: 서버에 데이터를 전송하거나 페이지를 이동합니다.
