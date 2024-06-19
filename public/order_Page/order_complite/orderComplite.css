@@ -7,6 +7,10 @@ body {
   justify-content: center;
 }
 
+img {
+  height: 75px;
+}
+
 .receipt {
   text-align: end;
 }
