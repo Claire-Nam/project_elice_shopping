@@ -57,3 +57,9 @@
   text-align: center;
   border: 2px solid #555;
 }
+
+@media screen and (max-width: 1200px) {
+  .area {
+    padding: 0 20px;
+  }
+}

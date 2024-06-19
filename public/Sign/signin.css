@@ -67,6 +67,10 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
 }
-#login-form a {
+#login-form span {
+  color: #999999;
   float: right;
+}
+#login-form span a {
+  color: #6a24fe;
 }
