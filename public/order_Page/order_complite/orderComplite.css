@@ -7,6 +7,10 @@ body {
   justify-content: center;
 }
 
+img {
+  height: 75px;
+}
+
 .receipt {
   text-align: end;
 }
@@ -32,7 +36,7 @@ body {
   border: 1px solid #ededed;
   border-collapse: collapse;
   margin: auto;
-  width: 30%;
+  width: 45%;
   height: 100px;
 }
 
