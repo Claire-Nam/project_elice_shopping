@@ -15,6 +15,7 @@ async function onCancelButtonClick(e) {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },
     }
   ).then((x) => x.json());
