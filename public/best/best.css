@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kaisei Decol", "Noto Sans KR", serif;
+}
+
 .category {
   padding-bottom: 160px;
 }
@@ -32,12 +39,39 @@
   width: 260px;
   height: 230px;
   text-align: left;
+  position: relative; /* Added position relative */
 }
 
 .perfumeImg {
   width: 200px;
   height: 200px;
   margin-bottom: 45px;
+}
+
+.svgCart {
+  width: 25px;
+  height: 25px;
+  filter: invert(80%) sepia(6%) saturate(808%) hue-rotate(212deg)
+    brightness(87%) contrast(95%);
+  position: absolute;
+  right: 60px;
+  bottom: 120px;
+}
+
+.svgCartBest {
+  width: 25px;
+  height: 25px;
+  filter: invert(80%) sepia(6%) saturate(808%) hue-rotate(212deg)
+    brightness(87%) contrast(95%);
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+
+.svgCart:hover,
+.svgCartBest:hover {
+  filter: invert(86%) sepia(11%) saturate(5790%) hue-rotate(197deg)
+    brightness(99%) contrast(105%);
 }
 
 .perfume .bestInfo {
@@ -66,12 +100,12 @@
   margin-bottom: 80px;
 }
 
-.sort a {
+.sortBest a {
   margin-right: 10px;
   font-size: 14px;
 }
 
-.sort a:hover {
+.sortBest a:hover {
   text-decoration: underline;
   text-underline-position: under;
   text-decoration-thickness: 1px;
@@ -83,19 +117,20 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 20px;
   width: 1200px;
   margin: 0 auto;
   margin-bottom: 70px;
 }
 
-.perfume {
+.perfumeList {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
   background-color: white;
   width: 280px;
   text-align: left;
+  position: relative; /* Added position relative */
 }
 
 .perfumeImgList {
