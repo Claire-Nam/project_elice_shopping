@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("password").value;
       const confirmPassword = document.getElementById("confirmPassword").value;
       const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
       const postcode = document.getElementById("sample6_postcode").value;
       const address = document.getElementById("sample6_address").value;
       const detailAddress = document.getElementById(
@@ -19,13 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 아이디 확인 (이메일 형식으로 변경)
       if (!userName) {
-        alert("아이디를 입력해 주세요. (영문소문자/숫자, 4~16자)");
+        alert("이메일을 입력해 주세요.");
         return;
       }
 
-      const usernamePattern = /^[a-z0-9]{4,16}$/;
-      if (!usernamePattern.test(userName)) {
-        alert("아이디는 영문소문자/숫자, 4~16자로 입력해 주세요.");
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(userName)) {
+        alert("유효한 이메일 주소를 입력해 주세요.");
         return;
       }
 
@@ -65,11 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: `${userName}@naver.com`,
+          email: userName,
           password: password,
           fullName: name,
-          address: addressObj.address,
-          phoneNumber: "01045103013",
+          address: addressObj.address + addressObj.detailAddress,
+          phoneNumber: phone,
         }),
       }).then((x) => x.json());
 
