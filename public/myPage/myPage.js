@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       alert("로그아웃 되었습니다.");
 
       // 로그인 페이지로 이동
-      location.href = "/public/sign/signin.html";
+      location.href = "/Sign/signin.html";
     });
   } else {
     console.error("Logout button not found");
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const token = localStorage.getItem("authToken");
       if (!token) {
         alert("로그인이 필요합니다.");
-        location.href = "/public/sign/signin.html";
+        location.href = "/Sign/signin.html";
         return;
       }
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
           alert("회원 탈퇴가 완료되었습니다.");
           // 로그인 페이지로 이동
-          location.href = "/public/sign/signin.html";
+          location.href = "/Sign/signin.html";
         } else {
           const errorData = await response.json();
           console.error("Failed to delete user", errorData);
@@ -64,17 +64,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Delete button not found");
   }
 
-  function userProfile(name, email) {
+  function userProfile(name, email, phoneNumber, address) {
     return `
       <li id="userName" class="dataList">회원 이름 : ${name}</li>
       <li id="userAddress" class="dataList">이메일 : ${email}</li>
+      <li id="userAddress" class="dataList">전화번호 : ${phoneNumber}</li>
+      <li id="userAddress" class="dataList">주소 : ${address}</li>
     `;
   }
 
   const token = localStorage.getItem("authToken");
   if (!token) {
     alert("로그인이 필요합니다.");
-    location.href = "/public/sign/signin.html";
+    location.href = "/Sign/signin.html";
     return;
   }
 
@@ -92,7 +94,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       return;
     }
 
-    const html = userProfile(user.fullName, user.email);
+    console.log(user);
+    const html = userProfile(
+      user.fullName,
+      user.email,
+      user.phoneNumber,
+      user.address
+    );
     document.querySelector("#profile").innerHTML = html;
   } catch (error) {
     console.error("Error fetching user data:", error);

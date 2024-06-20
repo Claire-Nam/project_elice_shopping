@@ -2,5 +2,5 @@ const authToken = localStorage.getItem("authToken");
 
 if (authToken === null) {
   alert("로그인이 필요한 서비스입니다.");
-  location.href = "/public/Sign/signin.html";
+  location.href = "/Sign/signin.html";
 }
