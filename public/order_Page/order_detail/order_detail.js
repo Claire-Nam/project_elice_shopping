@@ -25,6 +25,10 @@ async function getOrderDetail(orderId) {
   const searchParams = new URLSearchParams(location.search);
   const orderId = searchParams.get("oid") || "";
   const orderItemList = document.querySelector('tbody[data-id="order-items"]');
+  const orderIdElement = document.querySelector("h3");
+
+  // 주문 상세 페이지 상단에 주분번호 값 추가
+  orderIdElement.innerHTML = `주문번호: ${orderId}`;
 
   const data = await getOrderDetail(orderId);
 
