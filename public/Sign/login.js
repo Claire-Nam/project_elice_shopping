@@ -33,7 +33,7 @@ document
         alert("로그인에 성공했습니다!");
 
         // 메인 페이지로 이동
-        location.href = "/public/main/main.html";
+        location.href = "/main/main.html";
       } else {
         // 로그인 실패 시
         alert(result.reason || "로그인에 실패했습니다. 다시 시도해 주세요.");
