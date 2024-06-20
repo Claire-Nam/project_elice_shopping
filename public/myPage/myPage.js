@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       alert("로그아웃 되었습니다.");
 
       // 로그인 페이지로 이동
-      location.href = "/public/sign/signin.html";
+      location.href = "/Sign/signin.html";
     });
   } else {
     console.error("Logout button not found");
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const token = localStorage.getItem("authToken");
       if (!token) {
         alert("로그인이 필요합니다.");
-        location.href = "/public/sign/signin.html";
+        location.href = "/Sign/signin.html";
         return;
       }
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
           alert("회원 탈퇴가 완료되었습니다.");
           // 로그인 페이지로 이동
-          location.href = "/public/sign/signin.html";
+          location.href = "/Sign/signin.html";
         } else {
           const errorData = await response.json();
           console.error("Failed to delete user", errorData);
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const token = localStorage.getItem("authToken");
   if (!token) {
     alert("로그인이 필요합니다.");
-    location.href = "/public/sign/signin.html";
+    location.href = "/Sign/signin.html";
     return;
   }
 
