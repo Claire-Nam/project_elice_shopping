@@ -1,36 +1,51 @@
 document.addEventListener("DOMContentLoaded", loadOrderList());
 const cancelBtn = document.querySelectorAll(".cancel-btn");
 
-async function loadOrderList() {
-  try {
-    //서버에서 데이터 가져오기
-    const orderTable = document.getElementById("orderTable");
-    const response = await fetch(
-      "http://localhost:5000/api/orders/66717406fbeacc5c007f7ddd"
-    );
-    const orders = await response.json();
-
-    // 데이터를 테이블에 추가하기
-    orders.forEach((order) => {
-      let row = document.createElement("tr");
-      row.innerHTML = `
-      <td>${order.orderNumber}</td>
-      <td>${order.productImage}</td>
-      <td>${order.productName}</td>
-      <td>${order.price}</td>
-      <td>${order.quantity}</td>
-      `;
-      orderTable.querySelector("tbody").appendChild(row);
-    });
-  } catch (error) {
-    console.error("주문 데이터를 가져오는 중 오류가 발생했습니다.", error);
-  }
+async function loadOrderList(orderId) {
+  //서버에서 데이터 가져오기
+  const response = await fetch(
+    "http://localhost:5000/api/orders/66717406fbeacc5c007f7ddd",
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  const orders = await response.json();
+  return orders;
 }
 
-async () => {
-  const data = await loadOrderList();
-  const orderTable = document.getElementById("orderTable");
-};
+(async () => {
+  const searchParams = new URLSearchParams(location.search);
+  const orderId = searchParams.get("oid") || "";
+  const orderItemList = document.querySelector(
+    'tbody[data-id="orderTable-items"]'
+  );
+
+  const data = await loadOrderList(orderId);
+
+  const rows = data.productList
+    .map((product) => {
+      return `
+      <tr>
+        <td>${orderId}</td>
+        <td>
+        <img
+          src="${product.img}"
+          style="width: 75px; height: 50px"
+        />
+        </td>
+        <td>${product.name}</td>
+        <td>${product.price}</td>
+        <td>${product.sold}</td>
+        <td>${deliveryStatus}</td>
+      </tr>      
+    `;
+    })
+    .join("");
+  orderItemList.innerHTML = rows;
+})();
 
 async function onCancelButtonClick(e) {
   const check = confirm("정말 주문을 취소하시겠습니까?");
