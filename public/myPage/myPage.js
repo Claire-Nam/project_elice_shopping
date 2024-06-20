@@ -64,10 +64,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Delete button not found");
   }
 
-  function userProfile(name, email) {
+  function userProfile(name, email, phoneNumber, address) {
     return `
       <li id="userName" class="dataList">회원 이름 : ${name}</li>
       <li id="userAddress" class="dataList">이메일 : ${email}</li>
+      <li id="userAddress" class="dataList">전화번호 : ${phoneNumber}</li>
+      <li id="userAddress" class="dataList">주소 : ${address}</li>
     `;
   }
 
@@ -92,7 +94,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       return;
     }
 
-    const html = userProfile(user.fullName, user.email);
+    console.log(user);
+    const html = userProfile(
+      user.fullName,
+      user.email,
+      user.phoneNumber,
+      user.address
+    );
     document.querySelector("#profile").innerHTML = html;
   } catch (error) {
     console.error("Error fetching user data:", error);
