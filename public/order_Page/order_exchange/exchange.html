@@ -11,7 +11,7 @@
   <body>
     <div class="container">
         <h2>교환 요청서</h2>
-        <form>
+        <form action=""> //데이터를 전달할 서버 주소 기입
             <!--주문 정보 기재란-->
             <fieldset>
                 <legend>교환요청상품</legend>
@@ -70,11 +70,15 @@
                 </ul>
                 <ul>
                     <li>
-                        <label for="address" class="exchange">주소</label>
-                        <input type="number" size="4" id="postcode" required>
-                            <button type="button" class="searchPostCode">우편번호 찾기</button>
-                        <input type="text" size="40" id="roadAddress">
-                        <input type="text" size="40" id="roadAdressDetail" placehorder="상세주소 입력" required>
+                        <div class="address">
+                            <label for="">주소 </label>
+                            <div class="flex">
+                              <input type="text" id="postcode" placehoder="우편번호" />
+                              <input class="input-btn" type="button" onclick="search_execDaumPostcode()" value="우편번호 찾기" />
+                            </div>
+                            <input type="text" id="address1_ input" placeholder="주소" /><br />
+                            <input type="text" id="address2_input" placeholder="상세주소" />
+                        </div>
                     </li>
                 </ul>
             </fieldset>
@@ -87,5 +91,6 @@
         <a href="order_list.html"><input class="exchangeCancel" type="button" value="취소"></a>
     </div>
     <script src="exchange.js"></script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   </body>
 </html>
