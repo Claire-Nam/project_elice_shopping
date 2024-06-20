@@ -31,6 +31,7 @@ fieldset legend {
   color: purple;
 }
 
+<<<<<<< HEAD
 #roadAddress,
 #roadAdressDetail {
   margin-left: 80px;
@@ -38,6 +39,22 @@ fieldset legend {
 
 #roadAdressDetail:placeholder {
   color: #d4d4d4;
+=======
+#postcode {
+  margin-left: 48px;
+}
+
+#address1_input,
+#address2_input {
+  margin-left: 80px;
+}
+
+#postcode,
+#address1_input,
+#address2_input {
+  margin-top: 3px;
+  margin-bottom: 3px;
+>>>>>>> master
 }
 
 ul li {

@@ -36,7 +36,11 @@ window.__globalHeader = `
           </li>
         </ul>
         <ul class="icon"> 
+<<<<<<< HEAD
           <li><a href="../Sign/signin.html"><img src="../image/profile.svg" class="svg" alt="profile" /></a></li>
+=======
+          <li><a href="../myPage/index.html"><img src="../image/profile.svg" class="svg" alt="profile" /></a></li>
+>>>>>>> master
           <li><a href="../cart/cart.html"><img src="../image/shopping-cart.svg" class="svg" alt="cart"/></a></li=>
           <li><a href="#"><img src="../image/search.svg" class="svg" alt="search"/></a></liclass=>
         </ul>
