@@ -10,23 +10,57 @@ function perfumeBestList(
   point
 ) {
   return `
-      <div class="perfumeList" data-id="${id}">
+    <div class="perfumeList" data-id="${id}">
       <a href="../product/product.html"><img src="${img}" class="perfumeImgList"/></a>
-        <img src="../image/shopping-cart.svg" class="svgCart" alt="cart" />
-        <p class="info" id="brandName">${brandName}</p>
-        <p class="info" id="perfumeName">${name}</p>
-        <p class="info" id="scent">${description}</p>
-        <div class="priceSoldWrapper">
-          <p class="bestInfo" id="price">${price}원</p>
-          <p class="bestInfo" id="priceConsumer">${priceConsumer.toLocaleString()}원</p>
-          <p class="bestInfo" id="sold">- ${sold}%</p>
-        </div>
+      <img src="../image/shopping-cart.svg" class="svgCart" alt="cart" onclick="addToCart('${id}', '${name}', ${price}, '${img}', '${description}', ${sold}, '${brandName}', ${priceConsumer}, ${point})"/>
+      <p class="info" id="brandName">${brandName}</p>
+      <p class="info" id="perfumeName">${name}</p>
+      <p class="info" id="scent">${description}</p>
+      <div class="priceSoldWrapper">
+        <p class="bestInfo" id="price">${price}원</p>
+        <p class="bestInfo" id="priceConsumer">${priceConsumer.toLocaleString()}원</p>
+        <p class="bestInfo" id="sold">- ${sold}%</p>
       </div>
-      `;
+    </div>
+  `;
 }
 
-function setProductID(id) {
-  localStorage.setItem("productID", id);
+function addToCart(
+  id,
+  name,
+  price,
+  img,
+  description,
+  sold,
+  brandName,
+  priceConsumer,
+  point
+) {
+  const cartItem = {
+    id,
+    name,
+    price,
+    img,
+    description,
+    sold,
+    brandName,
+    priceConsumer,
+    point,
+    quantity: 1,
+  };
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const existingItemIndex = cart.findIndex((item) => item.id === id);
+
+  if (existingItemIndex !== -1) {
+    cart[existingItemIndex].quantity += 1;
+  } else {
+    cart.push(cartItem);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("장바구니에 추가되었습니다.");
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
