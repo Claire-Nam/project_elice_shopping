@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>주문 완료</title>
+
+    <link rel="stylesheet" href="orderComplite.css" />
+  </head>
+  <body>
+    <main id="main-container">
+      <!---상단 버튼-->
+      <div class="receipt">
+        <button class="pay_receipt">결제 영수증</button>
+        <button class="pay_detail">거래 내역서</button>
+      </div>
+
+      <!---주문완료 안내-->
+      <div class="noti_box">
+        <hr />
+        <img src="/public/order_Page/Image/order_complite.png" />
+        <p style="font-size: 25px">
+          <strong>
+            주문이 완료되었습니다.<br />구매해주셔서 감사합니다.
+          </strong>
+        </p>
+        <p style="font-size: 18px">주문번호 :</p>
+        <div class="detail_box">
+          <table class="orderInfo">
+            <tr>
+              <th>주문일시</th>
+              <td></td>
+              <th>주문자명</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>주문번호</th>
+              <td></td>
+              <th>결제수단</th>
+              <td>카드결제/3개월</td>
+            </tr>
+            <tr>
+              <th>배송유형</th>
+              <td>일반택배</td>
+              <th>결제금액</th>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+        <hr />
+      </div>
+
+      <!---하단 버튼-->
+      <div class="bottom-btn">
+        <button class="orderDetail">
+          <a href="/public/order_Page/order_detail/order_detail.html"
+            >주문내역 확인</a
+          >
+        </button>
+        <button class="goHome"><a href="/public/main.html">Home</a></button>
+      </div>
+    </main>
+    <script type="tex/javascript" src="orderComplite.js"></script>
+  </body>
+</html>

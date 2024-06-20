@@ -1,0 +1,46 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#main-container {
+  text-align: center;
+}
+
+img {
+  height: 75px;
+}
+
+.noti_box {
+  background-color: #f9f9f9;
+}
+
+.bottom-btn {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+.backToOrderList,
+.goHome {
+  background-color: #f9f9f9;
+  color: black;
+  border: 1px solid #f9f9f9;
+  text-align: center;
+  margin: 0 5px;
+}
+
+.backToOrderList,
+.goHome {
+  font-size: 0.8em;
+  text-align: center;
+  width: 100px;
+  height: 45px;
+}
+
+.backToOrderList,
+.goHome a {
+  text-decoration: none;
+  color: rgb(96, 17, 104);
+}

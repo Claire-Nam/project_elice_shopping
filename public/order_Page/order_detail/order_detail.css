@@ -1,0 +1,26 @@
+h2,
+h3 {
+  margin: 7px 0;
+}
+
+#delivery {
+  margin-bottom: 20px;
+}
+
+.deliver_info td {
+  padding-left: 14px;
+}
+.payment {
+  margin-bottom: 10px;
+}
+
+.pay_info {
+  witdh: 45%;
+}
+
+.pay_info {
+  width: 35%;
+  padding: 3px;
+  text-align: left;
+  background: #f9f9f9;
+}

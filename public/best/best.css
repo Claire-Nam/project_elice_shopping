@@ -1,3 +1,13 @@
+<<<<<<< HEAD:Perfume/best/best.css
+=======
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kaisei Decol", "Noto Sans KR", serif;
+}
+
+>>>>>>> a:public/best/best.css
 .category {
   padding-bottom: 160px;
 }
@@ -32,6 +42,10 @@
   width: 260px;
   height: 230px;
   text-align: left;
+<<<<<<< HEAD:Perfume/best/best.css
+=======
+  position: relative; /* Added position relative */
+>>>>>>> a:public/best/best.css
 }
 
 .perfumeImg {
@@ -40,6 +54,35 @@
   margin-bottom: 45px;
 }
 
+<<<<<<< HEAD:Perfume/best/best.css
+=======
+.svgCart {
+  width: 20px;
+  height: 20px;
+  filter: invert(80%) sepia(6%) saturate(808%) hue-rotate(212deg)
+    brightness(87%) contrast(95%);
+  position: absolute;
+  right: 110px;
+  bottom: 130px;
+}
+
+.svgCartBest {
+  width: 25px;
+  height: 25px;
+  filter: invert(80%) sepia(6%) saturate(808%) hue-rotate(212deg)
+    brightness(87%) contrast(95%);
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+
+.svgCart:hover,
+.svgCartBest:hover {
+  filter: invert(86%) sepia(11%) saturate(5790%) hue-rotate(197deg)
+    brightness(99%) contrast(105%);
+}
+
+>>>>>>> a:public/best/best.css
 .perfume .bestInfo {
   font-size: 15px;
   margin-left: 3px;
@@ -62,16 +105,28 @@
 .sortBest {
   display: flex;
   justify-content: flex-end;
+<<<<<<< HEAD:Perfume/best/best.css
   margin-right: 50px;
   margin-bottom: 80px;
 }
 
 .sort a {
+=======
+  margin-right: 80px;
+  margin-bottom: 80px;
+}
+
+.sortBest a {
+>>>>>>> a:public/best/best.css
   margin-right: 10px;
   font-size: 14px;
 }
 
+<<<<<<< HEAD:Perfume/best/best.css
 .sort a:hover {
+=======
+.sortBest a:hover {
+>>>>>>> a:public/best/best.css
   text-decoration: underline;
   text-underline-position: under;
   text-decoration-thickness: 1px;
@@ -83,6 +138,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+<<<<<<< HEAD:Perfume/best/best.css
   gap: 60px;
   width: 1200px;
   margin: 0 auto;
@@ -90,18 +146,36 @@
 }
 
 .perfume {
+=======
+  gap: 0px;
+  width: 1400px;
+  margin: 0 auto;
+  margin-right: 20px;
+  margin-bottom: 70px;
+}
+
+.perfumeList {
+>>>>>>> a:public/best/best.css
   display: flex;
   flex-direction: column;
   margin-top: 30px;
   background-color: white;
   width: 280px;
   text-align: left;
+<<<<<<< HEAD:Perfume/best/best.css
+=======
+  position: relative;
+>>>>>>> a:public/best/best.css
 }
 
 .perfumeImgList {
   width: 150px;
   height: 150px;
   margin-bottom: 45px;
+<<<<<<< HEAD:Perfume/best/best.css
+=======
+  border: 1px solid gray;
+>>>>>>> a:public/best/best.css
 }
 
 #brandName {
