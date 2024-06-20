@@ -19,7 +19,7 @@
   gap: 50px;
   background-color: rgb(245, 245, 245);
   width: 1400px;
-  height: 380px;
+  height: 430px;
   margin: 0 auto;
   margin-bottom: 70px;
 }
@@ -39,7 +39,7 @@
   width: 260px;
   height: 230px;
   text-align: left;
-  position: relative; /* Added position relative */
+  position: relative;
 }
 
 .perfumeImg {
@@ -48,14 +48,21 @@
   margin-bottom: 45px;
 }
 
+#sold {
+  font-size: 13px;
+  font-weight: bold;
+  color: rgb(178, 151, 209);
+  margin-left: -0px;
+}
+
 .svgCart {
   width: 20px;
   height: 20px;
   filter: invert(80%) sepia(6%) saturate(808%) hue-rotate(212deg)
     brightness(87%) contrast(95%);
   position: absolute;
-  right: 110px;
-  bottom: 130px;
+  right: 35px;
+  bottom: 170px;
 }
 
 .svgCartBest {
@@ -96,7 +103,7 @@
 .sortBest {
   display: flex;
   justify-content: flex-end;
-  margin-right: 80px;
+  margin-right: 140px;
   margin-bottom: 80px;
 }
 
@@ -117,11 +124,9 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0px;
-  width: 1400px;
-  margin: 0 auto;
-  margin-right: 20px;
-  margin-bottom: 70px;
+  gap: 70px;
+  margin-left: 30px;
+  margin-bottom: 200px;
 }
 
 .perfumeList {
@@ -129,7 +134,7 @@
   flex-direction: column;
   margin-top: 30px;
   background-color: white;
-  width: 280px;
+  width: 220px;
   text-align: left;
   position: relative;
 }
@@ -138,7 +143,10 @@
   width: 150px;
   height: 150px;
   margin-bottom: 45px;
-  border: 1px solid gray;
+  padding: 15px;
+  padding-right: 35px;
+  border: 1px solid rgba(233, 233, 233, 0.651);
+  box-sizing: content-box;
 }
 
 #brandName {
@@ -158,4 +166,22 @@
 #scent {
   font-size: 12px;
   margin-bottom: 10px;
+}
+
+/* 추가된 CSS */
+.priceSoldWrapper {
+  display: flex;
+  align-items: center;
+}
+
+#price {
+  margin-right: 10px;
+}
+
+#priceConsumer {
+  font-size: 13px;
+  color: gray;
+  text-decoration-line: line-through;
+  text-decoration-thickness: 1px;
+  margin-right: 5px;
 }

@@ -23,22 +23,22 @@ window.__globalHeader = `
           <li class="category" id="Man">
             Man
             <ul class="dropdown">
-              <li><a href="#">Man</a></li>
-              <li><a href="#">Both</a></li>
+              <li><a href="../man/man.html">Man</a></li>
+              <li><a href="../man/both.html">Both</a></li>
             </ul>
           </li>
           <li class="category" id="Women">
             Women
             <ul class="dropdown">
-              <li><a href="#">Women</a></li>
-              <li><a href="#">Both</a></li>
+              <li><a href="../women/women.html">Women</a></li>
+              <li><a href="../women/both.html">Both</a></li>
             </ul>
           </li>
         </ul>
         <ul class="icon"> 
           <li><a href="../myPage/index.html"><img src="../image/profile.svg" class="svg" alt="profile" /></a></li>
-          <li><a href="../cart/cart.html"><img src="../image/shopping-cart.svg" class="svg" alt="cart"/></a></li=>
-          <li><a href="#"><img src="../image/search.svg" class="svg" alt="search"/></a></liclass=>
+          <li><a href="../cart/cart.html"><img src="../image/shopping-cart.svg" class="svg" alt="cart"/></a></li>
+          <li><a href="#"><img src="../image/search.svg" class="svg" alt="search"/></a></li>
         </ul>
       </nav>
     </header>`;
