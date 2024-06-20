@@ -11,89 +11,93 @@
   </head>
   <body>
     <main role="main" class="main-container">
-      <table border="1" class="table" style="text-align: center">
-        <tr>
-          <td>주문번호</td>
-          <td>IMAGE</td>
-          <td>ITEM</td>
-          <td>PRICE</td>
-          <td>수량</td>
-          <td>주문상태</td>
-          <td>배송상태</td>
-          <td>교환/취소</td>
-        </tr>
-        <tr>
-          <td><a href="#">20240612-0000001376</a></td>
-          <td>
-            <img
-              src="/public/order_Page/Image/perfume.jpeg"
-              style="width: 75px; height: 50px"
-            />
-          </td>
-          <td>Perfume 1 (30ml)</td>
-          <td>₩32,000</td>
-          <td>1</td>
-          <td>결제 완료</td>
-          <td>-</td>
-          <td>
-            <button class="cancel-btn" attr-order-id="1234">주문 취소</button>
-          </td>
-        </tr>
-        <tr>
-          <td><a href="#">20240612-0000003954</a></td>
-          <td>
-            <img
-              src="/public/order_Page/Image/perfume.jpeg"
-              style="width: 75px; height: 50px"
-            />
-          </td>
-          <td>Perfume 2 (50ml)</td>
-          <td>₩74,000</td>
-          <td>1</td>
-          <td>배송준비중</td>
-          <td>-</td>
-          <td><button class="cancel-btn">주문 취소</button></td>
-        </tr>
-        <tr>
-          <td><a href="#">20240612-0000003967</a></td>
-          <td>
-            <img
-              src="/public/order_Page/Image/perfume.jpeg"
-              style="width: 75px; height: 50px"
-            />
-          </td>
-          <td>Perfume 3 (50ml)</td>
-          <td>₩174,000</td>
-          <td>2</td>
-          <td>배송중</td>
-          <td>CJ대한통운<br />3954-3759-9781</td>
-          <td>
-            <button class="exchange">
-              <a href="/public/order_Page/order_exchange/exchange.html"
-                >교환/반품</a
-              >
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td><a href="#">20240612-0000003512</a></td>
-          <td>
-            <img
-              src="/public/order_Page/Image/perfume.jpeg"
-              style="width: 75px; height: 50px"
-            />
-          </td>
-          <td>Perfume 4 (30ml)</td>
-          <td>₩37,000</td>
-          <td>1</td>
-          <td>배송 완료</td>
-          <td>CJ대한통운<br />6820=5927-2847</td>
-          <td>
-            <button class="exchange">
-              <a href="exchange.html">교환/반품</a>
-            </button>
-          </td>
-        </tr>
+      <table border="1" id="orderTable" style="text-align: center">
+        <thead>
+          <tr>
+            <td>주문번호</td>
+            <td>IMAGE</td>
+            <td>ITEM</td>
+            <td>PRICE</td>
+            <td>수량</td>
+            <td>주문상태</td>
+            <td>배송상태</td>
+            <td>교환/취소</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#">20240612-0000001376</a></td>
+            <td>
+              <img
+                src="/public/order_Page/Image/perfume.jpeg"
+                style="width: 75px; height: 50px"
+              />
+            </td>
+            <td>Perfume 1 (30ml)</td>
+            <td>₩32,000</td>
+            <td>1</td>
+            <td>결제 완료</td>
+            <td>-</td>
+            <td>
+              <button class="cancel-btn" attr-order-id="1234">주문 취소</button>
+            </td>
+          </tr>
+          <tr>
+            <td><a href="#">20240612-0000003954</a></td>
+            <td>
+              <img
+                src="/public/order_Page/Image/perfume.jpeg"
+                style="width: 75px; height: 50px"
+              />
+            </td>
+            <td>Perfume 2 (50ml)</td>
+            <td>₩74,000</td>
+            <td>1</td>
+            <td>배송준비중</td>
+            <td>-</td>
+            <td><button class="cancel-btn">주문 취소</button></td>
+          </tr>
+          <tr>
+            <td><a href="#">20240612-0000003967</a></td>
+            <td>
+              <img
+                src="/public/order_Page/Image/perfume.jpeg"
+                style="width: 75px; height: 50px"
+              />
+            </td>
+            <td>Perfume 3 (50ml)</td>
+            <td>₩174,000</td>
+            <td>2</td>
+            <td>배송중</td>
+            <td>CJ대한통운<br />3954-3759-9781</td>
+            <td>
+              <button class="exchange">
+                <a href="/public/order_Page/order_exchange/exchange.html"
+                  >교환/반품</a
+                >
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td><a href="#">20240612-0000003512</a></td>
+            <td>
+              <img
+                src="/public/order_Page/Image/perfume.jpeg"
+                style="width: 75px; height: 50px"
+              />
+            </td>
+            <td>Perfume 4 (30ml)</td>
+            <td>₩37,000</td>
+            <td>1</td>
+            <td>배송 완료</td>
+            <td>CJ대한통운<br />6820=5927-2847</td>
+            <td>
+              <button class="exchange">
+                <a href="exchange.html">교환/반품</a>
+              </button>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </main>
     <script src="order_list.js"></script>
