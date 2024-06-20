@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>주문 내역 상세</title>
-    <link rel="stylesheet" href="order_detail.css" />
+    <link rel="stylesheet" href="../order_detail/order_detail.css" />
+    <script src="../common/loginRequired.js"></script>
   </head>
   <body>
     <main class="main-container">
@@ -135,14 +136,17 @@
 
         <!--기타 버튼-->
         <button class="backOrderList">
-          <a href="/public/order_Page/order_list/order_list.html"
+          <a href="../order_Page/order_list/order_list.html"
             >주문목록 돌아가기</a
           >
         </button>
         <button class="delete">주문내역 삭제</button>
       </div>
     </main>
-    <script type="text/javascript" src="order_detail.js"></script>
+    <script
+      type="text/javascript"
+      src="../order_detail/order_detail.js"
+    ></script>
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
   </body>
 </html>
