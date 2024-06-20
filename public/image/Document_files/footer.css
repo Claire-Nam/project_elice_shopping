@@ -1,22 +1,14 @@
 /* footer.css */ /* 전체 footer 스타일 */
 footer {
-  height: 30%;
   background-color: #f9f9f9;
-  color: black;
+  color: #fff;
   padding: 50px 20px;
   font-family: Arial, sans-serif;
 }
 
-hr {
-  background-color: #ccc;
-  height: 1px;
-  border: 0;
-}
-
 /* 상위 섹션 스타일 */
 #top {
-  margin-bottom: 10px;
-  text-align: center;
+  margin-bottom: 30px;
 }
 
 /* flex 레이아웃을 위한 ul, li 스타일 */
@@ -30,18 +22,6 @@ ul.flex {
 
 ul.flex li {
   width: 25%;
-  position: relative;
-}
-
-ul.flex li:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 50%;
-  width: 1px;
-  background-color: #ccc;
-  transform: translateY(-50%);
 }
 
 ul.flex li span {
@@ -50,7 +30,7 @@ ul.flex li span {
 
 /* 각 정보 아이템 스타일 */
 ul.flex li h4 {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
@@ -70,18 +50,17 @@ ul.flex li .closed_info {
 
 /* footer_intro 스타일 */
 #footer_intro {
-  margin-bottom: 5px;
+  margin-bottom: 30px;
 }
 
 #footer_intro h5 {
-  font-size: 12px;
-  margin-bottom: 3px;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 #footer_intro p {
-  font-size: 10px;
-  color: black;
-  margin: 3px 0;
+  font-size: 12px;
+  color: #ccc;
 }
 
 /* footer_menu 스타일 */
@@ -90,7 +69,6 @@ ul.flex li .closed_info {
   justify-content: space-evenly;
   list-style-type: none;
   padding: 0;
-  margin: 10px 0;
 }
 
 .footer-nav li {
@@ -98,7 +76,7 @@ ul.flex li .closed_info {
 }
 
 .footer-nav li a {
-  font-size: 10px;
+  font-size: 14px;
   color: #ccc;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -165,7 +143,7 @@ ul.flex li .closed_info {
 /* 추가적인 스타일링 */
 
 #footer_info .detail_info li.copy {
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 #footer_info .detail_info li {
