@@ -1,10 +1,11 @@
 async function getOrderDetail(orderId) {
   const res = await fetch(
-    "http://localhost:5000/api/orders/6673bdcf65b40901abfe3e7e/6673e816c3791d5a900ab087",
+    `http://34.22.80.21/api/orders/${userId}?oid=${orderId}`,
     {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },
     }
   );
@@ -15,7 +16,7 @@ async function getOrderDetail(orderId) {
 (async () => {
   const searchParams = new URLSearchParams(location.search);
   const orderId = searchParams.get("oid") || "";
-  const orderItemList = document.querySelector('tbody[data-id="order-itmes"]');
+  const orderItemList = document.querySelector('tbody[data-id="order-items"]');
 
   const data = await getOrderDetail(orderId);
 
@@ -25,7 +26,7 @@ async function getOrderDetail(orderId) {
     <tr>
       <td>
         <img 
-          src="${product.img}
+          src="${product.img}"
           style="width:75px; height: 50px"
         />
       </td>
@@ -58,7 +59,7 @@ postcodeBtn.addEventListener("click", () => {
 //다음 우편번호 서비스 실행 함수
 function search_execDaumPostcode() {
   new daum.Postcode({
-    oncompliete: function (data) {
+    oncomplete: function (data) {
       let addr = ""; // 주소 변수
 
       if (data.userSelectedType === "R") {

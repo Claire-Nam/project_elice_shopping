@@ -4,11 +4,12 @@ const cancelBtn = document.querySelectorAll(".cancel-btn");
 async function loadOrderList(orderId) {
   //서버에서 데이터 가져오기
   const response = await fetch(
-    "http://localhost:5000/api/orders/66717406fbeacc5c007f7ddd",
+    `http://34.22.80.21/api/orders/orders?oid=${oderId}`,
     {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },
     }
   );
@@ -60,6 +61,7 @@ async function onCancelButtonClick(e) {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
           },
         }
       );

@@ -9,61 +9,18 @@
   <body>
     <main class="main-container">
       <h2>주문상세</h2>
-      <table border="1" style="text-align: center" data-id="order-items">
-        <tr>
-          <td>IMAGE</td>
-          <td>ITEM</td>
-          <td>수량</td>
-          <td>PRICE</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="/public/order_Page/Image/perfume.jpeg"
-              style="width: 75px; height: 50px"
-            />
-          </td>
-          <td>Perfume 1 (30ml)</td>
-          <td>30ml</td>
-          <td>1</td>
-          <td>₩32,000</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="/public/order_Page/Image/perfume.jpeg"
-              style="width: 75px; height: 50px"
-            />
-          </td>
-          <td>Perfume 2 (50ml)</td>
-          <td>50ml</td>
-          <td>1</td>
-          <td>₩74,000</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="/public/order_Page/Image/perfume.jpeg"
-              style="width: 75px; height: 50px"
-            />
-          </td>
-          <td>Perfume 3 (50ml)</td>
-          <td>50ml</td>
-          <td>2</td>
-          <td>₩174,000</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="/public/order_Page/Image/perfume.jpeg"
-              style="width: 75px; height: 50px"
-            />
-          </td>
-          <td>Perfume 4 (30ml)</td>
-          <td>30ml</td>
-          <td>1</td>
-          <td>₩37,000</td>
-        </tr>
+      <table border="1" style="text-align: center" data-id="order-list">
+        <thead>
+          <tr>
+            <td>IMAGE</td>
+            <td>ITEM</td>
+            <td>수량</td>
+            <td>PRICE</td>
+          </tr>
+        </thead>
+        <tbody data-id="order-items">
+          <!--여기에 Javascript에서 동적으로 추가될 내용이 들어갈 예정-->
+        </tbody>
       </table>
 
       <!--받는사람 정보-->
@@ -185,5 +142,6 @@
       </div>
     </main>
     <script type="text/javascript" src="order_detail.js"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
   </body>
 </html>
