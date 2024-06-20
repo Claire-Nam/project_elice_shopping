@@ -8,63 +8,19 @@
   </head>
   <body>
     <main class="main-container">
-      <table border="1" class="table" style="text-align: center">
-        <h2>주문상세</h2>
-        <tr>
-          <td>IMAGE</td>
-          <td>ITEM</td>
-          <td>옵션</td>
-          <td>수량</td>
-          <td>PRICE</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="/public/order_Page/Image/perfume.jpeg"
-              style="width: 75px; height: 50px"
-            />
-          </td>
-          <td>Perfume 1 (30ml)</td>
-          <td>30ml</td>
-          <td>1</td>
-          <td>₩32,000</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="/public/order_Page/Image/perfume.jpeg"
-              style="width: 75px; height: 50px"
-            />
-          </td>
-          <td>Perfume 2 (50ml)</td>
-          <td>50ml</td>
-          <td>1</td>
-          <td>₩74,000</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="/public/order_Page/Image/perfume.jpeg"
-              style="width: 75px; height: 50px"
-            />
-          </td>
-          <td>Perfume 3 (50ml)</td>
-          <td>50ml</td>
-          <td>2</td>
-          <td>₩174,000</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="/public/order_Page/Image/perfume.jpeg"
-              style="width: 75px; height: 50px"
-            />
-          </td>
-          <td>Perfume 4 (30ml)</td>
-          <td>30ml</td>
-          <td>1</td>
-          <td>₩37,000</td>
-        </tr>
+      <h2>주문상세</h2>
+      <table border="1" style="text-align: center" data-id="order-list">
+        <thead>
+          <tr>
+            <td>IMAGE</td>
+            <td>ITEM</td>
+            <td>수량</td>
+            <td>PRICE</td>
+          </tr>
+        </thead>
+        <tbody data-id="order-items">
+          <!--여기에 Javascript에서 동적으로 추가될 내용이 들어갈 예정-->
+        </tbody>
       </table>
 
       <!--받는사람 정보-->
@@ -140,13 +96,12 @@
         <button class="modify_info">주문정보 수정</button>
         <div id="modal_box">
           <div id="modify_deliver">
-            <button class="close">수정 완료</button>
             <form class="new_deliver">
-              <label for="receiver_name">받는 사람</label>
-              <input type="text" size="40" id="receiver_name" required /><br />
-              <label for="receiver_phone">연락처</label>
-              <input type="text" size="40" id="receiver_phone" required /><br />
-              <label for="address">주소</label>
+              <label for="receiver_name" class="modify_info">받는 사람</label>
+              <input type="text" size="20" id="receiver_name" required /><br />
+              <label for="receiver_phone" class="modify_info">연락처</label>
+              <input type="text" size="20" id="receiver_phone" required /><br />
+              <label for="address" class="modify_info">주소</label>
               <input
                 type="text"
                 id="postcode"
@@ -173,6 +128,7 @@
                 placeholder="상세주소"
               />
             </form>
+            <button class="close">수정 완료</button>
           </div>
         </div>
 
@@ -186,5 +142,6 @@
       </div>
     </main>
     <script type="text/javascript" src="order_detail.js"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
   </body>
 </html>
