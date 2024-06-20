@@ -49,13 +49,13 @@
 }
 
 .svgCart {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   filter: invert(80%) sepia(6%) saturate(808%) hue-rotate(212deg)
     brightness(87%) contrast(95%);
   position: absolute;
-  right: 60px;
-  bottom: 120px;
+  right: 110px;
+  bottom: 130px;
 }
 
 .svgCartBest {
@@ -96,7 +96,7 @@
 .sortBest {
   display: flex;
   justify-content: flex-end;
-  margin-right: 50px;
+  margin-right: 80px;
   margin-bottom: 80px;
 }
 
@@ -117,9 +117,10 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  width: 1200px;
+  gap: 0px;
+  width: 1400px;
   margin: 0 auto;
+  margin-right: 20px;
   margin-bottom: 70px;
 }
 
@@ -130,13 +131,14 @@
   background-color: white;
   width: 280px;
   text-align: left;
-  position: relative; /* Added position relative */
+  position: relative;
 }
 
 .perfumeImgList {
   width: 150px;
   height: 150px;
   margin-bottom: 45px;
+  border: 1px solid gray;
 }
 
 #brandName {

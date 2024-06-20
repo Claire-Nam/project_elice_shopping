@@ -1,0 +1,66 @@
+.productDetails {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 80px;
+  margin: 0 auto; /* 중앙 정렬을 위해 추가 */
+  margin-left: -350px;
+  margin-top: 120px;
+  font-size: 15px;
+}
+
+.perfumeImg {
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
+  border: 1px solid rgb(223, 223, 223);
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.productNames p:first-child {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 8px;
+}
+
+.productNames p:last-child {
+  margin-bottom: 7px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.productPricing {
+  display: flex;
+  gap: 20px;
+}
+
+.pricingTitles,
+.pricingValues {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.productShipping {
+  display: flex;
+  gap: 20px;
+}
+
+.shippingTitles,
+.shippingValues {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+hr {
+  width: 100%;
+  margin: 20px 0;
+  height: 1px;
+  color: rgb(117, 49, 49);
+}
