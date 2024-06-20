@@ -1,26 +1,45 @@
-async function modifyOrde() {
-  const result = await fetch(
-    `http://34.22.80.21/api/orders/orders?oid=${orderId}`,
+async function getOrderDetail(orderId) {
+  const res = await fetch(
+    `http://34.22.80.21/api/orders/${userId}?oid=${orderId}`,
     {
-      method: "PATCH",
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },
-      bodys: {
-        _id: "${orderId}",
-        userId: "${userId}",
-        receiver: "${receiver}",
-        phoneNumber: "${tel_input}",
-        productList: [],
-        address: "${address}",
-        deliveryStatus: "${deliveryStatus}",
-        orderDate: "${date}",
-        __v: 0,
-      },
     }
-  ).then((res) => res.json());
+  );
+  const data = await res.json();
+  return data;
 }
+
+(async () => {
+  const searchParams = new URLSearchParams(location.search);
+  const orderId = searchParams.get("oid") || "";
+  const orderItemList = document.querySelector('tbody[data-id="order-items"]');
+
+  const data = await getOrderDetail(orderId);
+
+  const rows = data.productList
+    .map((product) => {
+      return `
+    <tr>
+      <td>
+        <img 
+          src="${product.img}"
+          style="width:75px; height: 50px"
+        />
+      </td>
+      <td>${product.name}</td>
+      <td>${product.sold}</td>
+      <td>${product.price}</td>
+    </tr>
+    `;
+    })
+    .join("");
+
+  orderItemList.innerHTML = rows;
+})();
 
 //배송지 정보 수정을 위한 모달박스 창 띄우기/닫기
 const openModal = document.querySelector(".modify_info");
@@ -40,7 +59,7 @@ postcodeBtn.addEventListener("click", () => {
 //다음 우편번호 서비스 실행 함수
 function search_execDaumPostcode() {
   new daum.Postcode({
-    oncompliete: function (data) {
+    oncomplete: function (data) {
       let addr = ""; // 주소 변수
 
       if (data.userSelectedType === "R") {
