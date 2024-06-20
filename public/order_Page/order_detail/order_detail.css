@@ -15,11 +15,7 @@ h3 {
 }
 
 .pay_info {
-<<<<<<< HEAD
-  witdh: 45%;
-=======
   width: 45%;
->>>>>>> master
 }
 
 .pay_info {
@@ -28,8 +24,6 @@ h3 {
   text-align: left;
   background: #f9f9f9;
 }
-<<<<<<< HEAD
-=======
 #modal_box {
   display: none; /* 모달 박스를 기본적으로 숨김 */
   position: fixed;
@@ -41,4 +35,3 @@ h3 {
 #modal_box.active {
   display: block;
 }
->>>>>>> master

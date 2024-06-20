@@ -1,24 +1,14 @@
-<<<<<<< HEAD
-document.addEventListener("DOMContentLoaded", function () {
-  document
-    .getElementById("login-form")
-    .addEventListener("submit", function (event) {
-=======
 document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("login-form")
     .addEventListener("submit", async (event) => {
->>>>>>> master
       event.preventDefault(); // 폼 제출을 막습니다.
 
       const userName = document.getElementById("username").value;
       const password = document.getElementById("password").value;
       const confirmPassword = document.getElementById("confirmPassword").value;
       const name = document.getElementById("name").value;
-<<<<<<< HEAD
-=======
       const phone = document.getElementById("phone").value;
->>>>>>> master
       const postcode = document.getElementById("sample6_postcode").value;
       const address = document.getElementById("sample6_address").value;
       const detailAddress = document.getElementById(
@@ -30,15 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 아이디 확인 (이메일 형식으로 변경)
       if (!userName) {
-<<<<<<< HEAD
-        alert("아이디를 입력해 주세요. (영문소문자/숫자, 4~16자)");
-        return;
-      }
-
-      const usernamePattern = /^[a-z0-9]{4,16}$/;
-      if (!usernamePattern.test(userName)) {
-        alert("아이디는 영문소문자/숫자, 4~16자로 입력해 주세요.");
-=======
         alert("이메일을 입력해 주세요.");
         return;
       }
@@ -46,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(userName)) {
         alert("유효한 이메일 주소를 입력해 주세요.");
->>>>>>> master
         return;
       }
 
@@ -74,16 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
         detailAddress: detailAddress,
         extraAddress: extraAddress,
       };
-<<<<<<< HEAD
-
-      // 회원가입 처리 로직을 여기에 추가합니다.
-      console.log({
-        userName: userName,
-        password: password,
-        name: name,
-        address: addressObj,
-      });
-=======
       /**
        * 회원가입	POST
        * 34.22.80.21/api/register
@@ -113,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
       //   name: name,
       //   address: addressObj,
       // });
->>>>>>> master
 
       // 여기서 실제 폼 제출 로직을 추가할 수 있습니다.
       // 예: 서버에 데이터를 전송하거나 페이지를 이동합니다.

@@ -12,7 +12,7 @@ a {
 /* 상단바 */
 #top {
   background-color: rgb(205, 206, 255);
-  background-image: url("image/banner.jpg"); /* 배경 이미지 설정 */
+  background-image: url("../image/banner.jpg"); /* 배경 이미지 설정 */
   background-size: cover; /* 이미지가 요소 전체를 덮도록 설정 */
   background-position: center; /* 이미지가 가운데에 위치하도록 설정 */
 }
