@@ -1,4 +1,5 @@
 function createPerfumeCard(
+  id,
   name,
   price,
   img,
@@ -10,7 +11,7 @@ function createPerfumeCard(
   imgInfo
 ) {
   return `
-      <div class="perfume">
+      <div class="perfume" data-id="${id}">
             <a href="../product/product.html"><img src="${img}" class="perfumeImg"/></a>
             <img src="../image/shopping-cart.svg" class="svgCartBest" alt="cart" />
             <p class="bestInfo" id="brandName">${brandName}</p>
@@ -23,6 +24,10 @@ function createPerfumeCard(
             </div>
           </div>
       `;
+}
+
+function setProductID(id) {
+  localStorage.setItem("productID", id);
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -71,10 +76,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 데이터 결합
     const combinedData = products.map((product, index) => {
-      const jsonItem = jsonData[index];
+      const jsonItem = jsonData.find((item) => item.name === product.name);
       return {
+        id: product.id,
         name: product.name,
-        price: jsonItem.price,
+        price: jsonItem ? jsonItem.price : 0,
         description: product.description,
         img: product.img,
         sold: product.sold,
@@ -91,6 +97,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const html = combinedData
       .map((x) =>
         createPerfumeCard(
+          x.id,
           x.name,
           x.price,
           x.img,
@@ -105,6 +112,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       .join("");
 
     document.querySelector("#bestSection").innerHTML = html;
+
+    // 클릭 이벤트 리스너 추가
+    document.querySelectorAll(".perfume a").forEach((element) => {
+      element.addEventListener("click", (event) => {
+        event.preventDefault();
+        const parent = element.closest(".perfume");
+        const id = parent.dataset.id;
+        setProductID(id);
+        window.location.href = element.href;
+      });
+    });
   } catch (error) {
     console.error("Error fetching data:", error);
     document.querySelector(

@@ -1,1 +1,2 @@
-document.body.innerHTML = window.__globalHeader + document.body.innerHTML;
+document.body.innerHTML =
+  window.__globalHeader + document.body.innerHTML + window.__globalFooter;
