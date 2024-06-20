@@ -1,30 +1,25 @@
 document.addEventListener("DOMContentLoaded", loadOrderList());
 const cancelBtn = document.querySelectorAll(".cancel-btn");
 
-async function loadOrderList(orderId) {
+async function loadOrderList() {
   //서버에서 데이터 가져오기
-  const response = await fetch(
-    `http://34.22.80.21/api/orders/orders?oid=${oderId}`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-      },
-    }
-  );
+  const response = await fetch("http://34.22.80.21/api/orders/orders", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+    },
+  });
   const orders = await response.json();
   return orders;
 }
 
 (async () => {
-  const searchParams = new URLSearchParams(location.search);
-  const orderId = searchParams.get("oid") || "";
   const orderItemList = document.querySelector(
     'tbody[data-id="orderTable-items"]'
   );
 
-  const data = await loadOrderList(orderId);
+  const data = await loadOrderList();
 
   const rows = data.productList
     .map((product) => {
