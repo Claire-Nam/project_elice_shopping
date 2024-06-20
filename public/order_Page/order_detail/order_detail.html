@@ -140,13 +140,12 @@
         <button class="modify_info">주문정보 수정</button>
         <div id="modal_box">
           <div id="modify_deliver">
-            <button class="close">수정 완료</button>
             <form class="new_deliver">
-              <label for="receiver_name">받는 사람</label>
-              <input type="text" size="40" id="receiver_name" required /><br />
-              <label for="receiver_phone">연락처</label>
-              <input type="text" size="40" id="receiver_phone" required /><br />
-              <label for="address">주소</label>
+              <label for="receiver_name" class="modify_info">받는 사람</label>
+              <input type="text" size="20" id="receiver_name" required /><br />
+              <label for="receiver_phone" class="modify_info">연락처</label>
+              <input type="text" size="20" id="receiver_phone" required /><br />
+              <label for="address" class="modify_info">주소</label>
               <input
                 type="text"
                 id="postcode"
@@ -173,6 +172,7 @@
                 placeholder="상세주소"
               />
             </form>
+            <button class="close">수정 완료</button>
           </div>
         </div>
 

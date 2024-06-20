@@ -27,11 +27,46 @@ h3 {
 #modal_box {
   display: none; /* 모달 박스를 기본적으로 숨김 */
   position: fixed;
-  background-color: white;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(192, 192, 192, 0.6);
 }
 
 #modal_box.active {
+  display: flex;
+}
+
+#modify_deliver {
+  margin: 15px auto;
+  background-color: white;
+  padding: 20px;
+}
+
+.close {
   display: block;
+  margin-top: 10px;
+  margin-left: 37%;
+  text-align: center;
+}
+
+label.modify_info {
+  font-weight: bold;
+  width: 80px;
+  float: left;
+  text-align: left;
+}
+
+#address1_input,
+#address2_input {
+  margin-left: 80px;
+}
+
+.close {
+  display: inline-block;
 }
