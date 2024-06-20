@@ -1,14 +1,22 @@
 async function getOrderDetail(orderId) {
-  const res = await fetch(
-    `http://34.22.80.21/api/orders/${userId}?oid=${orderId}`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-      },
-    }
-  );
+  const res = await fetch(`http://34.22.80.21/api/orders`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+    },
+    body: {
+      _id: "${orderId}",
+      userId: "${userId}",
+      receiver: "${receiver}",
+      phoneNumber: "${phoneNumber}",
+      productList: [],
+      address: "${address}",
+      deliveryStatus: "${deliveryStatus}",
+      orderDate: "${date}",
+      __v: 0,
+    },
+  });
   const data = await res.json();
   return data;
 }
@@ -90,14 +98,15 @@ modifyCompleteBtn.addEventListener("click", function () {
     document.getElementById("address2_input").value;
 
   // 받는 사람 정보 업데이트
+  // 받는 사람 정보 업데이트 요소 선택
   const receiverNameElement = document.querySelector(
-    ".deliver_info td:nth-child(2)"
+    ".deliver_info tr:nth-child(1) td:nth-child(2)"
   );
   const receiverPhoneElement = document.querySelector(
-    ".deliver_info td:nth-child(4)"
+    ".deliver_info tr:nth-child(2) td:nth-child(2)"
   );
   const addressElement = document.querySelector(
-    ".deliver_info td:nth-child(6)"
+    ".deliver_info tr:nth-child(3) td:nth-child(2)"
   );
 
   receiverNameElement.textContent = receiverName;
