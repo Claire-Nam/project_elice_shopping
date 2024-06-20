@@ -1,3 +1,9 @@
+const searchPostCodeBtn = document
+  .getElementsByClassName("input-btn")
+  .addEventListener("click", function () {
+    search_execDaumPostcode();
+  });
+
 function search_execDaumPostcode() {
   new daum.Postcode({
     oncomplete: function (data) {
