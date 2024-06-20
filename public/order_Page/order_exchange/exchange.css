@@ -31,13 +31,20 @@ fieldset legend {
   color: purple;
 }
 
-#roadAddress,
-#roadAdressDetail {
+#postcode {
+  margin-left: 48px;
+}
+
+#address1_input,
+#address2_input {
   margin-left: 80px;
 }
 
-#roadAdressDetail:placeholder {
-  color: #d4d4d4;
+#postcode,
+#address1_input,
+#address2_input {
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 ul li {

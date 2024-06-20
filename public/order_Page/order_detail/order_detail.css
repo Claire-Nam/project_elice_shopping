@@ -15,7 +15,7 @@ h3 {
 }
 
 .pay_info {
-  witdh: 45%;
+  width: 45%;
 }
 
 .pay_info {
@@ -23,4 +23,15 @@ h3 {
   padding: 3px;
   text-align: left;
   background: #f9f9f9;
+}
+#modal_box {
+  display: none; /* 모달 박스를 기본적으로 숨김 */
+  position: fixed;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#modal_box.active {
+  display: block;
 }

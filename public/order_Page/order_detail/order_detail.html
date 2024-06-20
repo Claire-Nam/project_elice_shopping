@@ -107,14 +107,14 @@
                 <tr>
                   <th>결제 수단</th>
                   <th>총 상품가격</th>
-                  <th>배송비</th>
+                  <th>배송현항</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>신용카드</td>
                   <td>₩317,000</td>
-                  <td>무료 배송</td>
+                  <td>결제 완료</td>
                 </tr>
               </tbody>
               <thead>
@@ -135,7 +135,48 @@
         </div>
       </div>
 
-      <div clas="submit">
+      <!--주문정보 수정-->
+      <div class="submit">
+        <button class="modify_info">주문정보 수정</button>
+        <div id="modal_box">
+          <div id="modify_deliver">
+            <button class="close">수정 완료</button>
+            <form class="new_deliver">
+              <label for="receiver_name">받는 사람</label>
+              <input type="text" size="40" id="receiver_name" required /><br />
+              <label for="receiver_phone">연락처</label>
+              <input type="text" size="40" id="receiver_phone" required /><br />
+              <label for="address">주소</label>
+              <input
+                type="text"
+                id="postcode"
+                placeholder="우편번호"
+                required
+              />
+              <input
+                class="input-btn"
+                type="button"
+                onclick="search_execDaumPostcode()"
+                value="우편번호 찾기"
+              /><br />
+              <input
+                type="text"
+                id="address1_input"
+                size="35"
+                placeholder="주소"
+                required
+              /><br />
+              <input
+                type="text"
+                id="address2_input"
+                size="35"
+                placeholder="상세주소"
+              />
+            </form>
+          </div>
+        </div>
+
+        <!--기타 버튼-->
         <button class="backOrderList">
           <a href="/public/order_Page/order_list/order_list.html"
             >주문목록 돌아가기</a
