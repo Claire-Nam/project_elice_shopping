@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="../main/main.css" />
     <link rel="stylesheet" href="../common/common.css" />
     <link rel="stylesheet" href="../common/footer.css" />
-    <script src="../common/header.js"></script>
-    <script src="../common/footer.js"></script>
+    
   </head>
 
   <body>
-    <section class="myPage">
+    <!-- <section class="myPage">
       <div class="area">
         <div class="header">
           <h1>마이페이지</h1>
@@ -24,13 +23,49 @@
         <div class="myPage_list">
           <div class="user-data">
             <ul class="user-data-list" id="profile">
-              <!-- User Profile 데이터가 여기에 삽입됩니당 -->
             </ul>
             <button id="">회원정보 수정</button>
             <button id="delete">탈퇴</button>
           </div>
-          <!-- <div class="order"><h3>주문 현황</h3></div>
-          <div class="list-items">
+      </div>
+    </section> -->
+    <section class="myPage">
+      <div class="area">
+        <div class="header">
+          <h1>마이페이지</h1>
+        </div>
+        <div class="user_btn">
+          
+          <button id="logout">로그아웃</button>
+          <button id="delete">회원 탈퇴</button>
+        </div>
+        <div id="profileForm" style="display: none;">
+          <form id="updateProfileForm">
+            <label for="fullName">회원 이름:</label>
+            <input type="text" id="fullName" name="fullName" />
+            <!-- <label for="email">이메일:</label>
+            <input type="email" id="email" name="email" /> -->
+            <label for="phoneNumber">전화번호:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" />
+            <label for="address">주소:</label>
+            <input type="text" id="address" name="address" />
+            <label for="currentPassword">현재 비밀번호:</label>
+            <input type="password" id="currentPassword" name="currentPassword" required />
+            <button type="submit">수정 완료</button>
+          </form>
+        </div>
+        <div class="myPage_list">
+          <div class="user-data">
+            <ul class="user-data-list" id="profile">
+              <li id="userName" class="dataList">회원 이름 :</li>
+              <li id="userAddress" class="dataList">이메일 :</li>
+              <li id="userPhoneNumber" class="dataList">전화번호 :</li>
+              <li id="userAddress" class="dataList">주소 :</li>
+            </ul>
+          </div>
+          <button id="updateProfileButton">회원정보 수정</button>
+          <!-- <div class="order"><h3>주문 현황</h3></div> -->
+          <!-- <div class="list-items">
             <div class="list-item">
               <div>주문수</div>
               <div>0</div>
@@ -47,13 +82,15 @@
               <div>배송완료</div>
               <div>0</div>
             </div>
-          </div>
-        </div> -->
+          </div> -->
+        <!-- </div> -->
       </div>
     </section>
+
+    <script src="../common/header.js"></script>
+    <script src="../common/footer.js"></script>
     <script src="../common/loginRequired.js"></script>
   <script src="./myPage.js"></script>
-
     <script src="../common/header.js"></script>
     <script src="../common/common.js"></script>
     <script src="../common/font.js"></script>
