@@ -28,8 +28,13 @@ hr {
   width: 80px;
   height: 80px;
   margin-left: 40px;
-  margin-right: 100px;
+  margin-right: 30px;
   margin-bottom: 20px;
+  border: 1px solid rgb(223, 223, 223);
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: content-box;
 }
 
 .cartPerfume {
@@ -39,13 +44,19 @@ hr {
   margin-top: 20px;
 }
 
+.brandName {
+  color: gray;
+  width: 60px;
+  font-size: 12px;
+}
+
 .perfumeName {
-  width: 160px;
-  margin-left: 40px;
+  width: 220px;
 }
 
 .price {
-  margin-left: 50px;
+  margin-left: 0px;
+  width: 100px;
 }
 
 .cartList {
@@ -65,7 +76,6 @@ hr {
 .count {
   display: flex;
   flex-direction: row;
-  margin-left: 40px;
 }
 
 .minus,
@@ -75,10 +85,12 @@ hr {
   width: 40px;
   border: 0;
   background-color: transparent;
-  border-radius: 4px;
+  border-radius: 1px;
   font-weight: bold;
-  border: 1px solid gray;
+  border: 1px solid rgb(219, 219, 219);
+  box-sizing: content-box;
   color: gray;
+  padding-bottom: 0px;
 }
 
 .plus:hover {
@@ -90,10 +102,10 @@ hr {
   border-color: purple;
 }
 .count p {
-  border: 1px solid black;
+  border: 1px solid rgb(177, 172, 172);
+  border-radius: 1px;
   width: 80px;
   text-align: center;
-  border-radius: 4px;
 }
 
 .cartPrice {
@@ -106,7 +118,7 @@ hr {
   align-items: center;
   width: 1100px;
   margin: 80px 130px 30px 130px;
-  border: 1px solid gray;
+  border: 1px solid rgb(230, 227, 227);
   padding: 30px 80px;
 }
 

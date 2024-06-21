@@ -17,7 +17,7 @@ function perfumeBestList(
       <p class="info" id="perfumeName">${name}</p>
       <p class="info" id="scent">${description}</p>
       <div class="priceSoldWrapper">
-        <p class="bestInfo" id="price">${price}원</p>
+        <p class="bestInfo" id="price">${price.toLocaleString()}원</p>
         <p class="bestInfo" id="priceConsumer">${priceConsumer.toLocaleString()}원</p>
         <p class="bestInfo" id="sold">- ${sold}%</p>
       </div>
@@ -39,7 +39,7 @@ function addToCart(
   const cartItem = {
     id,
     name,
-    price,
+    price: parseInt(price), // 가격을 정수로 변환
     img,
     description,
     sold,
@@ -102,12 +102,14 @@ document.addEventListener("DOMContentLoaded", async () => {
           return {
             id: apiProduct.id,
             name: apiProduct.name,
-            price: jsonItemBestList.price,
+            price: parseInt(jsonItemBestList.price.replace(/,/g, "")), // 가격을 정수로 변환
             description: apiProduct.description,
             img: apiProduct.img,
             sold: apiProduct.sold,
             brandName: jsonItemBestList.brandName,
-            priceConsumer: jsonItemBestList.priceConsumer,
+            priceConsumer: parseInt(
+              jsonItemBestList.priceConsumer.replace(/,/g, "")
+            ), // 가격을 정수로 변환
             point: jsonItemBestList.point,
             imgInfo: jsonItemBestList.imgInfo,
           };

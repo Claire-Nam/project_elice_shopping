@@ -1,11 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const cartItems = JSON.parse(localStorage.getItem("cart"));
+  let isAllSelected = false;
 
-  if (cartItems && cartItems.length > 0) {
-    const html = cartItems
-      .map((item) => {
-        return `
-          <div class="cartItem">
+  function updateCartDisplay() {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartPerfumeContainer = document.querySelector(".cartPerfume");
+    const paymentValues = document.querySelector(".payment-values");
+
+    // 현재 체크된 상태를 저장
+    const currentCheckedStates = Array.from(
+      document.querySelectorAll(".cartItem .checkbox")
+    ).map((checkbox) => checkbox.checked);
+
+    cartPerfumeContainer.innerHTML = "";
+    cartItems.forEach((item, index) => {
+      const totalPrice = item.price * item.quantity;
+
+      const cartItemHTML = `
+          <div class="cartItem" data-index="${index}">
             <input type="checkbox" class="checkbox" />
             <img src="${item.img}" class="perfumeImg" />
             <div class="cartList">
@@ -19,36 +30,118 @@ document.addEventListener("DOMContentLoaded", () => {
               <button class="plus">+</button>
             </div>
             <div class="cartPrice">
-              <p>${(item.price * item.quantity).toLocaleString()}원</p>
+              <p>${totalPrice.toLocaleString()}원</p>
             </div>
           </div>
         `;
-      })
-      .join("");
+      cartPerfumeContainer.insertAdjacentHTML("beforeend", cartItemHTML);
+    });
 
-    document.getElementById("cartItems").innerHTML = html;
+    // 기존 체크 상태를 복원
+    document
+      .querySelectorAll(".cartItem .checkbox")
+      .forEach((checkbox, index) => {
+        checkbox.checked = currentCheckedStates[index] || false;
+      });
 
-    const totalPrice = cartItems.reduce(
-      (acc, item) => acc + item.price * item.quantity,
-      0
-    );
-    const discountedPrice = cartItems.reduce(
-      (acc, item) => acc + item.price * item.quantity * (item.sold / 100),
-      0
-    );
-    const finalPrice = totalPrice - discountedPrice;
-
-    document.getElementById(
-      "totalPrice"
-    ).textContent = `${totalPrice.toLocaleString()}원`;
-    document.getElementById(
-      "discountedPrice"
-    ).textContent = `${discountedPrice.toLocaleString()}원`;
-    document.getElementById(
-      "finalPrice"
-    ).textContent = `${finalPrice.toLocaleString()}원`;
-  } else {
-    document.getElementById("cartItems").innerHTML =
-      "<p>장바구니에 담긴 상품이 없습니다.</p>";
+    updatePaymentValues();
   }
+
+  function updatePaymentValues() {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const checkedItems = document.querySelectorAll(
+      ".cartItem .checkbox:checked"
+    );
+    let totalProductPrice = 0;
+    let totalDiscountPrice = 0;
+
+    checkedItems.forEach((checkbox) => {
+      const cartItem = checkbox.closest(".cartItem");
+      const index = cartItem.getAttribute("data-index");
+      const item = cartItems[index];
+      const totalPrice = item.price * item.quantity;
+      totalProductPrice += totalPrice;
+    });
+
+    const totalPayment = totalProductPrice - totalDiscountPrice;
+    const paymentValues = document.querySelector(".payment-values");
+    paymentValues.innerHTML = `
+        <p>${totalProductPrice.toLocaleString()}원</p>
+        <div class="operator">-</div>
+        <p>${totalDiscountPrice.toLocaleString()}원</p>
+        <div class="operator">=</div>
+        <p>${totalPayment.toLocaleString()}원</p>
+      `;
+  }
+
+  function updateQuantity(index, delta) {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cartItems[index]) {
+      cartItems[index].quantity += delta;
+      if (cartItems[index].quantity < 1) cartItems[index].quantity = 1; // 최소 수량 1로 설정
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+      updateCartDisplay();
+    }
+  }
+
+  function deleteSelectedItems() {
+    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const checkedItems = document.querySelectorAll(
+      ".cartItem .checkbox:checked"
+    );
+
+    const itemsToDelete = [];
+    checkedItems.forEach((checkbox) => {
+      const cartItem = checkbox.closest(".cartItem");
+      const index = parseInt(cartItem.getAttribute("data-index"), 10);
+      itemsToDelete.push(index);
+    });
+
+    // 역순으로 삭제하여 인덱스 문제가 발생하지 않도록 처리
+    itemsToDelete
+      .sort((a, b) => b - a)
+      .forEach((index) => {
+        cartItems.splice(index, 1);
+      });
+
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+    updateCartDisplay();
+  }
+
+  document.querySelector(".cartPerfume").addEventListener("click", (event) => {
+    if (event.target.classList.contains("plus")) {
+      const cartItem = event.target.closest(".cartItem");
+      const index = cartItem.getAttribute("data-index");
+      updateQuantity(parseInt(index), 1);
+    } else if (event.target.classList.contains("minus")) {
+      const cartItem = event.target.closest(".cartItem");
+      const index = cartItem.getAttribute("data-index");
+      updateQuantity(parseInt(index), -1);
+    }
+  });
+
+  document.querySelector(".cartPerfume").addEventListener("change", (event) => {
+    if (event.target.classList.contains("checkbox")) {
+      updatePaymentValues();
+    }
+  });
+
+  document
+    .querySelector(".sortCart a:nth-child(1)")
+    .addEventListener("click", (event) => {
+      event.preventDefault();
+      const checkboxes = document.querySelectorAll(".cartItem .checkbox");
+      isAllSelected = !isAllSelected;
+      checkboxes.forEach((checkbox) => (checkbox.checked = isAllSelected));
+      updatePaymentValues();
+    });
+
+  document
+    .querySelector(".sortCart a:nth-child(2)")
+    .addEventListener("click", (event) => {
+      event.preventDefault();
+      deleteSelectedItems();
+    });
+
+  updateCartDisplay();
 });
