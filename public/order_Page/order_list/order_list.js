@@ -1,81 +1,157 @@
-document.addEventListener("DOMContentLoaded", loadOrderList());
-const cancelBtn = document.querySelectorAll(".cancel-btn");
+// order_list.js
 
-async function loadOrderList() {
-  //서버에서 데이터 가져오기
-  const response = await fetch("http://34.22.80.21/api/orders/orders", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-    },
-  });
-  const orders = await response.json();
-  return orders;
-}
+document.addEventListener("DOMContentLoaded", function () {
+  const orderTable = document.querySelector('[data-id="orderTable-items"]');
 
-(async () => {
-  const orderItemList = document.querySelector(
-    'tbody[data-id="orderTable-items"]'
-  );
+  fetch("http://34.22.80.21/api/orders/")
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((order) => {
+        const row = document.createElement("tr");
 
-  const data = await loadOrderList();
+        // 주문번호 (링크)
+        const orderIdCell = document.createElement("td");
+        const orderIdLink = document.createElement("a");
+        orderIdLink.href = "#"; // 여기에 실제 주문 상세 페이지 링크 추가
+        orderIdLink.textContent = order.orderNumber; // orderNumber는 가져온 데이터의 주문번호 필드명에 따라 수정
+        orderIdCell.appendChild(orderIdLink);
+        row.appendChild(orderIdCell);
 
-  const rows = data.productList
-    .map((product) => {
-      return `
-      <tr>
-        <td>${orderId}</td>
-        <td>
-        <img
-          src="${product.img}"
-          style="width: 75px; height: 50px"
-        />
-        </td>
-        <td>${product.name}</td>
-        <td>${product.price}</td>
-        <td>${product.sold}</td>
-        <td>${deliveryStatus}</td>
-      </tr>      
-    `;
-    })
-    .join("");
-  orderItemList.innerHTML = rows;
-})();
+        // 이미지 셀
+        const imageCell = document.createElement("td");
+        const image = document.createElement("img");
+        image.src = "../order_Page/Image/perfume.jpeg"; // 이미지 경로는 실제 데이터에 따라 수정
+        image.style.width = "75px";
+        image.style.height = "50px";
+        imageCell.appendChild(image);
+        row.appendChild(imageCell);
 
-async function onCancelButtonClick(e) {
-  const check = confirm("정말 주문을 취소하시겠습니까?");
+        // 상품명
+        const itemCell = document.createElement("td");
+        itemCell.textContent = order.productName; // productName은 가져온 데이터의 상품명 필드명에 따라 수정
+        row.appendChild(itemCell);
 
-  if (check == true) {
-    const orderId = e.target.getAttribute("attr-order-id");
+        // 가격
+        const priceCell = document.createElement("td");
+        priceCell.textContent = `₩${order.price.toLocaleString()}`; // 가격 포맷팅 필요시 수정
+        row.appendChild(priceCell);
 
-    try {
-      const result = await fetch(
-        `http://34.22.80.21/api/orders/orders?oid=${orderId}`,
-        {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-          },
+        // 수량
+        const quantityCell = document.createElement("td");
+        quantityCell.textContent = order.quantity; // quantity는 가져온 데이터의 수량 필드명에 따라 수정
+        row.appendChild(quantityCell);
+
+        // 주문상태
+        const statusCell = document.createElement("td");
+        statusCell.textContent = order.status; // status는 가져온 데이터의 주문상태 필드명에 따라 수정
+        row.appendChild(statusCell);
+
+        // 교환/취소
+        const actionCell = document.createElement("td");
+        if (order.status === "결제 완료" || order.status === "배송준비중") {
+          const cancelBtn = document.createElement("button");
+          cancelBtn.className = "cancel-btn";
+          cancelBtn.textContent = "주문 취소";
+          cancelBtn.setAttribute("attr-order-id", order.orderId); // orderId는 가져온 데이터의 주문번호 필드명에 따라 수정
+          actionCell.appendChild(cancelBtn);
+        } else if (order.status === "배송중" || order.status === "배송 완료") {
+          const exchangeBtn = document.createElement("button");
+          exchangeBtn.className = "exchange";
+          const exchangeLink = document.createElement("a");
+          exchangeLink.href = "../order_exchange/exchange.html"; // 교환/반품 페이지 링크
+          exchangeLink.textContent = "교환/반품";
+          exchangeBtn.appendChild(exchangeLink);
+          actionCell.appendChild(exchangeBtn);
         }
-      );
+        row.appendChild(actionCell);
 
-      if (response.ok) {
-        alert("주문을 성공적으로 취소했습니다.");
-        window.location.href = "/public/order_Page/order_exchange/refund.html";
-      } else {
-        console.error("주문 취소에 실패했습니다.");
-      }
-    } catch (error) {
-      console.error(
-        "주문 취소 요청을 처리하는 동안 에러가 발생했습니다",
-        error
-      );
-    }
-  }
-}
-
-cancelBtn.forEach((el) => {
-  el.addEventListener("click", onCancelButtonClick);
+        // 테이블에 행 추가
+        orderTable.querySelector("tbody").appendChild(row);
+      });
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
 });
+
+// document.addEventListener("DOMContentLoaded", loadOrderList());
+// const cancelBtn = document.querySelectorAll(".cancel-btn");
+
+// async function loadOrderList() {
+//   //서버에서 데이터 가져오기
+//   const response = await fetch("http://34.22.80.21/api/orders/", {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+//     },
+//   });
+//   const orders = await response.json();
+//   return orders;
+// }
+
+// (async () => {
+//   const orderItemList = document.querySelector(
+//     'tbody[data-id="orderTable-items"]'
+//   );
+
+//   const data = await loadOrderList();
+
+//   const rows = data.productList
+//     .map((product) => {
+//       return `
+//       <tr>
+//         <td>${orderId}</td>
+//         <td>
+//         <img
+//           src="${product.img}"
+//           style="width: 75px; height: 50px"
+//         />
+//         </td>
+//         <td>${product.name}</td>
+//         <td>${product.price}</td>
+//         <td>${product.sold}</td>
+//         <td>${deliveryStatus}</td>
+//       </tr>
+//     `;
+//     })
+//     .join("");
+//   orderItemList.innerHTML = rows;
+// })();
+
+// async function onCancelButtonClick(e) {
+//   const check = confirm("정말 주문을 취소하시겠습니까?");
+
+//   if (check == true) {
+//     const orderId = e.target.getAttribute("attr-order-id");
+
+//     try {
+//       const result = await fetch(
+//         `http://34.22.80.21/api/orders/orders?oid=${orderId}`,
+//         {
+//           method: "DELETE",
+//           headers: {
+//             "Content-Type": "application/json",
+//             Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+//           },
+//         }
+//       );
+
+//       if (response.ok) {
+//         alert("주문을 성공적으로 취소했습니다.");
+//         window.location.href = "/public/order_Page/order_exchange/refund.html";
+//       } else {
+//         console.error("주문 취소에 실패했습니다.");
+//       }
+//     } catch (error) {
+//       console.error(
+//         "주문 취소 요청을 처리하는 동안 에러가 발생했습니다",
+//         error
+//       );
+//     }
+//   }
+// }
+
+// cancelBtn.forEach((el) => {
+//   el.addEventListener("click", onCancelButtonClick);
+// });
