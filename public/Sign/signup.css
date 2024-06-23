@@ -64,7 +64,11 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
 }
-#login-form a {
+#login-form span {
+  float: right;
+}
+#login-form span a {
+  color: #6a24fe;
   float: right;
 }
 .flex {
@@ -74,6 +78,7 @@ body {
 #login-form .flex .input-btn {
   background-color: #6a24fe;
   color: #fff;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {

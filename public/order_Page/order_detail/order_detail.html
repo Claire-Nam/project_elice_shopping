@@ -4,51 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>주문 내역 상세</title>
-    <link rel="stylesheet" href="order_detail.css" />
+    <link rel="stylesheet" href="../order_detail/order_detail.css" />
+    <script src="../common/loginRequired.js"></script>
   </head>
   <body>
-    <main role="main" class="main-container">
-      <table border="1" class="table" style="text-align: center">
-        <h2>주문상세</h2>
-        <tr>
-          <td>IMAGE</td>
-          <td>ITEM</td>
-          <td>옵션</td>
-          <td>수량</td>
-          <td>PRICE</td>
-        </tr>
-        <tr>
-          <td>
-            <img src="./order_Page/Image/perfume.jpeg" />
-          </td>
-          <td>Perfume 1 (30ml)</td>
-          <td>30ml</td>
-          <td>1</td>
-          <td>₩32,000</td>
-        </tr>
-        <tr>
-          <td><img src="./order_Page/Image/perfume.jpeg" /></td>
-          <td>Perfume 2 (50ml)</td>
-          <td>50ml</td>
-          <td>1</td>
-          <td>₩74,000</td>
-        </tr>
-        <tr>
-          <td>
-            <img src="./order_Page/Image/perfume.jpeg" />
-          </td>
-          <td>Perfume 3 (50ml)</td>
-          <td>50ml</td>
-          <td>2</td>
-          <td>₩174,000</td>
-        </tr>
-        <tr>
-          <td><img src="./order_Page/Image/perfume.jpeg" /></td>
-          <td>Perfume 4 (30ml)</td>
-          <td>30ml</td>
-          <td>1</td>
-          <td>₩37,000</td>
-        </tr>
+    <main class="main-container">
+      <h2>주문상세</h2>
+      <h3></h3>
+      <table border="1" style="text-align: center" data-id="order-list">
+        <thead>
+          <tr>
+            <td>IMAGE</td>
+            <td>ITEM</td>
+            <td>수량</td>
+            <td>PRICE</td>
+          </tr>
+        </thead>
+        <tbody data-id="order-items">
+          <!--여기에 Javascript에서 동적으로 추가될 내용이 들어갈 예정-->
+        </tbody>
       </table>
 
       <!--받는사람 정보-->
@@ -58,15 +32,24 @@
         <div>
           <h3>받는사람 정보</h3>
           <hr />
-          <div>
-            <table>
-              <dl>
-                <dt>받는사람</dt>
-                <dt>연락처</dt>
-                <dt>받는주소</dt>
-                <dt>배송 요청 사항</dt>
-              </dl>
-              <hr />
+          <div id="delivery">
+            <table class="deliver_info">
+              <tr>
+                <th>받는 사람</th>
+                <td>엘리스</td>
+              </tr>
+              <tr>
+                <th>연 락 처</th>
+                <td>010-1234-5678</td>
+              </tr>
+              <tr>
+                <th>받는 주소</th>
+                <td>서울시 강남구 선릉로 433</td>
+              </tr>
+              <tr>
+                <th>요청 사항</th>
+                <td>-</td>
+              </tr>
             </table>
           </div>
         </div>
@@ -76,29 +59,97 @@
       <div class="payment">
         <div>
           <h3>결제 정보</h3>
-          <hr />
           <div>
-            <table>
-              <tr>
-                <th>결제수단</th>
-              </tr>
-              <tr>
-                <th>총 상품가격</th>
-                <th>배송비</th>
-                <th>카드명/할부</th>
-                <th>총 결제금액</th>
-              </tr>
+            <table class="pay_info">
+              <thead>
+                <tr>
+                  <th>결제 수단</th>
+                  <th>총 상품가격</th>
+                  <th>배송현항</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>신용카드</td>
+                  <td>₩317,000</td>
+                  <td>결제 완료</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>카드명/할부</th>
+                  <th>총 결제금액</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>BC카드/3개월</td>
+                  <td>₩317,000</td>
+                </tr>
+              </tbody>
               <hr />
             </table>
           </div>
         </div>
       </div>
 
-      <div clas="submit">
-        <button class="backOrderList">주문목록 돌아가기</button>
+      <!--주문정보 수정-->
+      <div class="submit">
+        <button class="modify_info">주문정보 수정</button>
+        <div id="modal_box">
+          <div id="modify_deliver">
+            <form class="new_deliver">
+              <label for="receiver_name" class="modify_info">받는 사람</label>
+              <input type="text" size="20" id="receiver_name" required /><br />
+              <label for="receiver_phone" class="modify_info">연락처</label>
+              <input type="text" size="20" id="receiver_phone" required /><br />
+              <label for="address" class="modify_info">주소</label>
+              <input
+                type="text"
+                id="postcode"
+                placeholder="우편번호"
+                required
+              />
+              <input
+                class="input-btn"
+                type="button"
+                onclick="search_execDaumPostcode()"
+                value="우편번호 찾기"
+              /><br />
+              <input
+                type="text"
+                id="address1_input"
+                size="35"
+                placeholder="주소"
+                required
+              /><br />
+              <input
+                type="text"
+                id="address2_input"
+                size="35"
+                placeholder="상세주소"
+              />
+            </form>
+            <button class="close">수정 완료</button>
+          </div>
+        </div>
+
+        <!--기타 버튼-->
+        <button class="backOrderList">
+          <a href="../order_Page/order_list/order_list.html"
+            >주문목록 돌아가기</a
+          >
+        </button>
         <button class="delete">주문내역 삭제</button>
       </div>
     </main>
-    <script type="text/javascript" src="order_detail.js"></script>
+    <link rel="stylesheet" href="../common/footer.css" />
+    <script src="../common/header.js"></script>
+    <script src="../common/footer.js"></script>
+    <script
+      type="text/javascript"
+      src="../order_detail/order_detail.js"
+    ></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
   </body>
 </html>

@@ -22,8 +22,29 @@
 .header {
   text-align: center;
 }
+.user_btn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.user_btn button {
+  cursor: pointer;
+  background-color: #6a24fe;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+}
 .user-data {
   margin-bottom: 20px;
+}
+.user-data button {
+  cursor: pointer;
+  background-color: #6a24fe;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
 }
 .myPage_list {
   display: flex;
@@ -56,4 +77,10 @@
   width: 100%;
   text-align: center;
   border: 2px solid #555;
+}
+
+@media screen and (max-width: 1200px) {
+  .area {
+    padding: 0 20px;
+  }
 }

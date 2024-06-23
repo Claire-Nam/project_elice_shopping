@@ -1,0 +1,72 @@
+h2,
+h3 {
+  margin: 7px 0;
+}
+
+#delivery {
+  margin-bottom: 20px;
+}
+
+.deliver_info td {
+  padding-left: 14px;
+}
+.payment {
+  margin-bottom: 10px;
+}
+
+.pay_info {
+  width: 45%;
+}
+
+.pay_info {
+  width: 35%;
+  padding: 3px;
+  text-align: left;
+  background: #f9f9f9;
+}
+#modal_box {
+  display: none; /* 모달 박스를 기본적으로 숨김 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(192, 192, 192, 0.6);
+}
+
+#modal_box.active {
+  display: flex;
+}
+
+#modify_deliver {
+  margin: 15px auto;
+  background-color: white;
+  padding: 20px;
+}
+
+.close {
+  display: block;
+  margin-top: 10px;
+  margin-left: 37%;
+  text-align: center;
+}
+
+label.modify_info {
+  font-weight: bold;
+  width: 80px;
+  float: left;
+  text-align: left;
+}
+
+#address1_input,
+#address2_input {
+  margin-left: 80px;
+}
+
+.close {
+  display: inline-block;
+}
